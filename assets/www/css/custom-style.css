@@ -1,5 +1,25 @@
 body{
+	background: #65aba6;
+}
+section {
+	margin: 0 -20px;
+	padding: 0 20px;
+}
+footer{
+	padding-top: 20px;
+	text-align: center;
+	color: white;
+}
+.content1{
 	background: url("../img/noise-f1.gif");
+}
+.content2 {
+	background: #65aba6;
+	box-shadow: inset 0px 7px 13px -6px #0A665B;
+	padding-top: 10px;
+}
+.content2 .span12 ol li{
+	color: #fefefe;
 }
 .span12 ol {
 	font-family: "Quando";
@@ -13,7 +33,7 @@ body{
 	display: block;
 	border-radius: 5px;
 	width: 100%;
-	padding: 15px;
+	padding: 5px;
 	margin: 15px 0;
 
 	font-size: 5rem;
@@ -21,24 +41,48 @@ body{
 	text-shadow: 0 -1px 0 rgba(17, 82, 66, 0.6);
 
 	background-image: linear-gradient(to bottom,#efecca, #E7E2AB);
+	background-image: -webkit-linear-gradient( bottom,#efecca, #E7E2AB);
+	background-image: -o-linear-gradient( bottom,#efecca, #E7E2AB);
+	background-image: -moz-linear-gradient( bottom,#efecca, #E7E2AB);
+	background-image: -ms-linear-gradient( bottom,#efecca, #E7E2AB);
 	background-color: #EEE475;
 	border: 1px solid #d4d4d4;
-	box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+	box-shadow: 0 1px 8px -3px rgba(0, 0, 0, 0.5);
 }
 .marcador:active{
 	background-image: linear-gradient(to bottom,#E7E2AB,#efecca);
+	background-image: -webkit-linear-gradient( bottom,#E7E2AB,#efecca);
+	background-image: -o-linear-gradient( bottom,#E7E2AB,#efecca);
+	background-image: -moz-linear-gradient( bottom,#E7E2AB,#efecca);
+	background-image: -ms-linear-gradient( bottom,#E7E2AB,#efecca);
 	background-color: #EEE475;
 }
 
 .marcador .icone{
 	float: left;
-	padding: 0px 35px 0 22px;
-	border-right: 2px solid #A2C2B6;
+	padding: 20px 35px 20px 33px;
+	border-right: 1px solid #D6D4AB;
 }
 .marcador .texto{
+	font-size: 3rem;
 	padding: 0px 0 0 21px;
-	line-height: 70px;
+	line-height: 119px;
 	text-align: center;
 	font-family: "helvetica neue";
 	font-weight: 200;
+
+}
+.busca{
+	width: 100%;
+}
+.sinc-btn{
+	color: #2E5F6F;
+}
+.sinc{
+	margin-right: 19px;
+}
+.content1 .navbar .navbar-inner {
+	background: #353535;
+	border-bottom: 1px solid black;
+	box-shadow: 0px 0 1px 1px white, inset 0px -7px 6px -7px black;
 }
