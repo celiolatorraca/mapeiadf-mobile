@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'FontSmith Font';
+  src: url('FontSmithFont-Regular.eot');
+  src: url('FontSmithFont-Regular.eot?#iefix') format('embedded-opentype'),
+       url('FontSmithFont-Regular.ttf') format('truetype'),
+       url('FontSmithFont-Regular.svg#fontsmith_font') format('svg');
+}
+
+.fontsmith_font {
+  font-family:'FontSmith Font';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.fontsmith_font.ponto-onibus-positivo:before{content:'\e001'}
+
+.fontsmith_font.ponto-onibus-negativo:before{content:'\e002'}
+

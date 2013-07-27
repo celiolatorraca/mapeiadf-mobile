@@ -1,0 +1,44 @@
+body{
+	background: url("../img/noise-f1.gif");
+}
+.span12 ol {
+	font-family: "Quando";
+}
+.span12 ol li{
+	line-height: 20px;
+	padding: 10px;
+	color: #747474;
+}
+.marcador{
+	display: block;
+	border-radius: 5px;
+	width: 100%;
+	padding: 15px;
+	margin: 15px 0;
+
+	font-size: 5rem;
+	color:#65aba6;
+	text-shadow: 0 -1px 0 rgba(17, 82, 66, 0.6);
+
+	background-image: linear-gradient(to bottom,#efecca, #E7E2AB);
+	background-color: #EEE475;
+	border: 1px solid #d4d4d4;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+}
+.marcador:active{
+	background-image: linear-gradient(to bottom,#E7E2AB,#efecca);
+	background-color: #EEE475;
+}
+
+.marcador .icone{
+	float: left;
+	padding: 0px 35px 0 22px;
+	border-right: 2px solid #A2C2B6;
+}
+.marcador .texto{
+	padding: 0px 0 0 21px;
+	line-height: 70px;
+	text-align: center;
+	font-family: "helvetica neue";
+	font-weight: 200;
+}
