@@ -2,9 +2,9 @@
 
 <html>
 	<head>
-		<title>Mapeia DF</title>
+		<title>MapeiaDF</title>
 		
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style_main.css">
 		
 		<script type="text/javascript" charset="utf-8" src="js/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.3.2.min.js"></script>
@@ -12,41 +12,16 @@
 		<script type="text/javascript" charset="utf-8" src="js/gpsDetectionPlugin.js"></script>
 		<script type="text/javascript" charset="utf-8" src="js/bootstrap.min.js"></script>
 		
-		<script type="text/javascript" charset="utf-8" src="js/database.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/application.js"></script>
 		<script type="text/javascript" charset="utf-8" src="js/gps.js"></script>
-		
-		
-		<script type="text/javascript" charset="utf-8">
-			// Wait for Cordova to load
-			document.addEventListener("deviceready", onDeviceReady, false);
-
-			function onDeviceReady() {
-				verifyGPS();
-				watchPosition("#geolocation");
-			}
-			
-			$(function() {
-				$("#marcar-ponto").click(function(e) {
-					e.preventDefault();
-					verifyGPS();
-					
-					markPosition = true;
-					markPositionTimestamp = new Date().getTime();
-				});
-				
-				$("#sincronizar").click(function(e) {
-					e.preventDefault();
-					
-					showResults();
-				});
-			});
-		</script>
+		<script type="text/javascript" charset="utf-8" src="js/database.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/main.js"></script>
 	</head>
 	
 	<body>
-		<p id="geolocation">Finding geolocation...</p>
 		
-		<div class="navbar navbar-fixed-top">
+	  <section class="content1">
+		<div class="navbar navbar-inverse navbar-static-top">
 	      <div class="navbar-inner">
 	        <div class="container-fluid">
 	          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
@@ -57,9 +32,9 @@
 	          <a class="brand" href="#">Mapeiadf</a>
 	          <div class="container-fluid nav-collapse">
 	            <ul class="nav">
-	              <li>a</li>
-	              <li>b</li>
-	              <li>c</li>
+	              <li><a href="#" alt="link" title="link">Link1</a></li>
+	              <li><a href="#" alt="link" title="link">Link1</a></li>
+	              <li><a href="#" alt="link" title="link">Link1</a></li>
 	            </ul>
 	          </div><!--/.nav-collapse -->
 	        </div>
@@ -68,29 +43,39 @@
 
 	    <div class="container-fluid">
 	      <div class="row-fluid">
-	        <div class="span12">
-	        	
+	        <div class="span12">	
 	        	<ol>
-					<li>Aperte o botão para marcar os pontos de ônibus</li>
-					<li>Indique as linhas de ônibus marcadas por você</li>
+					<li>Indique uma linha de ônibus para marcar se quiser.</li>
 				</ol>
-				 
-				<button type="button" class="btn btn-block btn-large btn-primary" id="marcar-ponto">Marcar Ponto</button>
+				<input class="input-block-level" type="text" placeholder="Digite o número da linha.">
+	        	<ol start="2">
+					<li>Aperte o botão para marcar os pontos de ônibus</li>
+				</ol>
+				<button type="button" class="marcador" id="marcar-ponto"><span class="fontsmith_font ponto-onibus-positivo icone"></span><span class="texto">marcar</span></button>
 
 				<ol start="3">
-					<li>Após selicionar um ponto escolha as linhas que passam por ele</li>
 					<li>Depois de marcar alguns pontos toque em Sincronizar Dados</li>
-					<li>Quantidade de pontos marcados</li>
 				</ol>
-
-				<button type="button" class="btn btn-block btn-large" id="sincronizar">Sincronizar Dados</button>
 	        </div>
 	      </div><!--/row-->
+	    </div>
+	  </section>
+	  <section class="content2">
+	  	<div class="container-fluid">
+		  <div class="row-fluid">
+	        <div class="span12">	
+	        	<ol start="4">
+					<li>Quantidade de pontos marcados: <span class="quantidade badge badge-warning">19</span></li>
+				</ol>
 
-	      <footer>
-	        <p>&copy; Mapeia DF | Company  2013</p>
-	      </footer>
+				<button type="button" class="btn btn-block btn-large sinc-btn" id="sincronizar"><i class="icon-repeat sinc"></i>Sincronizar Dados</button>
+	        </div>
+	      </div><!--/row-->
+	    </div>
+	  </section>
 
-	    </div> <!-- /container -->
+      <footer>
+        <p>&copy; Mapeia DF | Company  2013</p>
+      </footer>
 	</body>
 </html>
