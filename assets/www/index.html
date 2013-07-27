@@ -4,85 +4,93 @@
 	<head>
 		<title>Mapeia DF</title>
 		
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		
 		<script type="text/javascript" charset="utf-8" src="js/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.3.2.min.js"></script>
 		<script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
 		<script type="text/javascript" charset="utf-8" src="js/gpsDetectionPlugin.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/bootstrap.min.js"></script>
 		
 		<script type="text/javascript" charset="utf-8" src="js/database.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/gps.js"></script>
 		
 		
 		<script type="text/javascript" charset="utf-8">
 			// Wait for Cordova to load
 			document.addEventListener("deviceready", onDeviceReady, false);
 
-			// Cordova is ready
 			function onDeviceReady() {
-				gpsDetect = cordova.require('cordova/plugin/gpsDetectionPlugin');
-				
-				gpsDetect.checkGPS(onGPSSuccess, onGPSError);
-	
-				var options = {enableHighAccuracy: true, maximumAge: 15000, timeout: 300000};
-				navigator.geolocation.watchPosition(onSuccess, onError, options);
-			}
-			
-			function onGPSSuccess(on) {
-	            if (!on) {
-	            	alert("É preciso ligar seu GPS :)");
-	            }
-	        }
-
-	        function onGPSError(e) {
-	            alert("Error : "+e);
-	        }
- 
-			function onSuccess(position) {
-				var element = $('#geolocation');
-				element.html('Latitude: '           	   + position.coords.latitude              + '<br />' +
-                		            'Longitude: '          + position.coords.longitude             + '<br />' +
-                        		    'Altitude: '           + position.coords.altitude              + '<br />' +
-                            		'Accuracy: '           + position.coords.accuracy              + '<br />' +
-                            		'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
-                            		'Heading: '            + position.coords.heading               + '<br />' +
-                            		'Speed: '              + position.coords.speed                 + '<br />' +
-                            		'Timestamp: '          + position.timestamp          		   + '<br />');
-				
-				savePosition(position.coords.latitude, position.coords.longitude);
-			}
-
-			// onError Callback receives a PositionError object
-			function onError(error) {
-				alert('code: '    + error.code    + '\n' +
-					  'message: ' + error.message + '\n');
-			}
-			
-			function queryDB(tx) {
-			    tx.executeSql('SELECT * FROM MAPEIA_DF', [], querySuccess, errorCB);
-			}
-
-			function querySuccess(tx, results) {
-			    alert("Returned rows = " + results.rows.length);
-			    
-			    var len = results.rows.length;
-			    for (var i = 0; i < len; i++){
-			        alert("Row = " + i + " ID = " + results.rows.item(i).id + " Latitude =  " + results.rows.item(i).latitude + " Longitude =  " + results.rows.item(i).longitude);
-			    }
+				verifyGPS();
+				watchPosition("#geolocation");
 			}
 			
 			$(function() {
-				$("#teste").click(function(e) {
+				$("#marcar-ponto").click(function(e) {
 					e.preventDefault();
-					getDatabase().transaction(queryDB, errorCB);
+					verifyGPS();
+					
+					markPosition = true;
+					markPositionTimestamp = new Date().getTime();
+				});
+				
+				$("#sincronizar").click(function(e) {
+					e.preventDefault();
+					
+					showResults();
 				});
 			});
 		</script>
 	</head>
 	
 	<body>
-		<h1>GeoLocation</h1>
-		
 		<p id="geolocation">Finding geolocation...</p>
 		
-		<a id="teste" href="#">clica ae</a>
+		<div class="navbar navbar-fixed-top">
+	      <div class="navbar-inner">
+	        <div class="container-fluid">
+	          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </a>
+	          <a class="brand" href="#">Mapeiadf</a>
+	          <div class="container-fluid nav-collapse">
+	            <ul class="nav">
+	              <li>a</li>
+	              <li>b</li>
+	              <li>c</li>
+	            </ul>
+	          </div><!--/.nav-collapse -->
+	        </div>
+	      </div>
+	    </div>
+
+	    <div class="container-fluid">
+	      <div class="row-fluid">
+	        <div class="span12">
+	        	
+	        	<ol>
+					<li>Aperte o botão para marcar os pontos de ônibus</li>
+					<li>Indique as linhas de ônibus marcadas por você</li>
+				</ol>
+				 
+				<button type="button" class="btn btn-block btn-large btn-primary" id="marcar-ponto">Marcar Ponto</button>
+
+				<ol start="3">
+					<li>Após selicionar um ponto escolha as linhas que passam por ele</li>
+					<li>Depois de marcar alguns pontos toque em Sincronizar Dados</li>
+					<li>Quantidade de pontos marcados</li>
+				</ol>
+
+				<button type="button" class="btn btn-block btn-large" id="sincronizar">Sincronizar Dados</button>
+	        </div>
+	      </div><!--/row-->
+
+	      <footer>
+	        <p>&copy; Mapeia DF | Company  2013</p>
+	      </footer>
+
+	    </div> <!-- /container -->
 	</body>
 </html>
