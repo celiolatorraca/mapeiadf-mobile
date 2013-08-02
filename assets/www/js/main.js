@@ -23,6 +23,11 @@ $(function() {
 	$("#sincronizar").click(function(e) {
 		e.preventDefault();
 		
-		MapeiaDF.Gps.showResults();
+		if (navigator.onLine) {
+			MapeiaDF.Gps.showResults();
+			MapeiaDF.Gps.sendResults();
+		} else {
+			alert("Conecte-se à internet para Enviar seus Pontos!");
+		}
 	});
 });

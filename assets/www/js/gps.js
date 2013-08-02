@@ -10,6 +10,8 @@ MapeiaDF.GPS.prototype = {
 	markPosition: false,
 	markPositionTimestamp: null,
 	lastPosition: null,
+	sendingResults: false,
+	sendingResultIds: [],
 	options: {enableHighAccuracy: true, maximumAge: 15000, timeout: 300000},
 	
 	_init: function() {
@@ -26,13 +28,56 @@ MapeiaDF.GPS.prototype = {
 		});
 	},
 	
+	sendResults: function() {
+		var self = this;
+		
+		if (!self.sendingResults) {
+			self.sendingResults = true;
+			
+			MapeiaDF.Db.getInstance().transaction(function(tx) {
+				tx.executeSql('SELECT * FROM MAPEIA_DF', [], function(tx, results) {
+					if (results.rows.length > 0) {
+						var json = {};
+				    	json["facebook_user_id"] = "123qwe123";
+				    	
+				    	var stops = [];
+					    for (var i = 0; i < results.rows.length; i++) {
+					    	self.sendingResultIds.push(results.rows.item(i).id);
+					    	
+					    	stops.push({
+					    	    lat: results.rows.item(i).latitude,
+					    	    lng: results.rows.item(i).longitude
+					    	});
+					    }
+					    json["stops"] = stops;
+					    
+					    $.ajax({
+					    	url: "http://mapeiadf.herokuapp.com/api/stops/sync",
+					    	data: json,
+					    	success: function(data) {
+					    		console.log("Sucesso ao salvar! " + data);
+					    		MapeiaDF.Db.deletePositions(self.sendingResultIds);
+					    		sendingResultIds = [];
+					    	},
+					    	error: function(data) {
+					    		console.log("Error! " + data);
+					    	}
+					    });
+					}
+				});
+			});
+			
+			this.sendingResults = false;
+		}
+	},
+	
 	showResults: function() {
 		MapeiaDF.Db.getInstance().transaction(function(tx) {
 			tx.executeSql('SELECT * FROM MAPEIA_DF', [], function(tx, results) {
 				alert("Returned rows = " + results.rows.length);
 			    
 			    var len = results.rows.length;
-			    for (var i = 0; i < len; i++){
+			    for (var i = 0; i < len; i++) {
 			        alert("Row = " + i + " ID = " + results.rows.item(i).id + " Latitude =  " + results.rows.item(i).latitude + " Longitude =  " + results.rows.item(i).longitude);
 			    }
 			});

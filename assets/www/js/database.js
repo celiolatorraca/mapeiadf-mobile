@@ -15,7 +15,7 @@ MapeiaDF.Database.prototype = {
 		if (this.db == null) {
 			this.db = window.openDatabase(this.dbName, this.dbVersion, this.dbDescription, this.dbSize);
 			this.db.transaction(function(tx) {
-				tx.executeSql('DROP TABLE IF EXISTS MAPEIA_DF');
+				//tx.executeSql('DROP TABLE IF EXISTS MAPEIA_DF');
 				tx.executeSql('CREATE TABLE IF NOT EXISTS MAPEIA_DF (id unique, latitude, longitude)');
 			}, this._errorCB);
 		}
@@ -36,6 +36,20 @@ MapeiaDF.Database.prototype = {
 				}, self._errorCB);
 			}
 		}, 250);
+	},
+	
+	deletePositions: function(ids) {
+		var self = this;
+		
+		self.getInstance().transaction(function(tx) {
+			var idsString = "";
+			for (var i = 0; i < ids.length; i++) {
+				idsString += ids[i] + ",";
+			}
+			idsString = idsString.substring(0, idsString.length-1);
+			
+			tx.executeSql('DELETE FROM MAPEIA_DF WHERE id in ('+ idsString +')');
+		}, self._errorCB);
 	},
 	
 	_getLastId: function() {
