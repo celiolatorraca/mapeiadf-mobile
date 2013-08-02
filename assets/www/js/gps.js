@@ -38,33 +38,36 @@ MapeiaDF.GPS.prototype = {
 				tx.executeSql('SELECT * FROM MAPEIA_DF', [], function(tx, results) {
 					if (results.rows.length > 0) {
 						var json = {};
-				    	json["facebook_user_id"] = "123qwe123";
-				    	
-				    	var stops = [];
-					    for (var i = 0; i < results.rows.length; i++) {
-					    	self.sendingResultIds.push(results.rows.item(i).id);
-					    	
-					    	stops.push({
-					    	    lat: results.rows.item(i).latitude,
-					    	    lng: results.rows.item(i).longitude
-					    	});
-					    }
-					    json["stops"] = stops;
-					    
-					    //url: "http://mapeiadf.herokuapp.com/api/stops/sync",
-					    $.ajax({
-					    	url: "http://escobera.pagekite.me/api/stops/sync",
-					    	data: json,
-					    	dataType: "json",
-					    	type: "POST",
-					    	success: function(data) {
-					    		console.log("Sucesso ao salvar! " + data);
-					    		MapeiaDF.Db.deletePositions(self.sendingResultIds);
-					    	},
-					    	error: function(jqXHR, errorType, exception) {
-					    		console.log("Error! " + jqXHR.responseText);
-					    	}
-					    });
+						json["facebook_user_id"] = "123qwe123";
+
+						var stops = [];
+						for (var i = 0; i < results.rows.length; i++) {
+							self.sendingResultIds.push(results.rows.item(i).id);
+
+							stops.push({
+								lat: results.rows.item(i).latitude,
+								lng: results.rows.item(i).longitude
+							});
+						}
+						json["stops"] = stops;
+
+				    $.ajaxSetup({
+							headers: {"X-Requested-With": "XMLHttpRequest"}
+						});
+						$.ajax({
+							url: "http://mapeiadf.herokuapp.com/api/stops/sync",
+							type: "POST",
+							dataType: "json",
+							contentType: "application/json",
+							data: JSON.stringify(json),
+							success: function(data) {
+								console.log("Sucesso ao salvar! " + data);
+								MapeiaDF.Db.deletePositions(self.sendingResultIds);
+							},
+							error: function(jqXHR, errorType, exception) {
+								console.log("Error! " + jqXHR.responseText);
+							}
+						});
 					}
 				});
 			});
