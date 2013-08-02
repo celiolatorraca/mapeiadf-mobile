@@ -51,23 +51,26 @@ MapeiaDF.GPS.prototype = {
 					    }
 					    json["stops"] = stops;
 					    
+					    //url: "http://mapeiadf.herokuapp.com/api/stops/sync",
 					    $.ajax({
-					    	url: "http://mapeiadf.herokuapp.com/api/stops/sync",
+					    	url: "http://escobera.pagekite.me/api/stops/sync",
 					    	data: json,
+					    	dataType: "json",
+					    	type: "POST",
 					    	success: function(data) {
 					    		console.log("Sucesso ao salvar! " + data);
 					    		MapeiaDF.Db.deletePositions(self.sendingResultIds);
-					    		sendingResultIds = [];
 					    	},
-					    	error: function(data) {
-					    		console.log("Error! " + data);
+					    	error: function(jqXHR, errorType, exception) {
+					    		console.log("Error! " + jqXHR.responseText);
 					    	}
 					    });
 					}
 				});
 			});
 			
-			this.sendingResults = false;
+			self.sendingResultIds = [];
+			self.sendingResults = false;
 		}
 	},
 	
