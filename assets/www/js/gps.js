@@ -55,7 +55,7 @@ MapeiaDF.GPS.prototype = {
 							headers: {"X-Requested-With": "XMLHttpRequest"}
 						});
 						$.ajax({
-							url: "http://mapeiadf.herokuapp.com/api/stops/sync",
+							url: "http://192.241.172.109:3000/api/stops/sync",
 							type: "POST",
 							dataType: "json",
 							contentType: "application/json",
