@@ -1,7 +1,4 @@
-//Wait for Cordova to load
-document.addEventListener("deviceready", onDeviceReady, false);
-
-function onDeviceReady() {
+$(function() {
 	MapeiaDF.Gps = new MapeiaDF.GPS({selector: "#geolocation"});
 	MapeiaDF.Db = new MapeiaDF.Database({
 		dbName: "mapeia-df",
@@ -9,9 +6,7 @@ function onDeviceReady() {
 		dbDescription: "Mapeia DF - DB",
 		dbSize: 1000000
 	});
-}
-
-$(function() {
+	
 	$("#marcar-ponto").click(function(e) {
 		e.preventDefault();
 		MapeiaDF.Gps.verifyGPS();
@@ -24,10 +19,11 @@ $(function() {
 		e.preventDefault();
 		
 		if (navigator.onLine) {
-			MapeiaDF.Gps.showResults();
 			MapeiaDF.Gps.sendResults();
 		} else {
 			alert("Conecte-se à internet para Enviar seus Pontos!");
 		}
 	});
+	
+	MapeiaDF.Db.countPositions(".quantidade");
 });

@@ -15,7 +15,6 @@ MapeiaDF.Database.prototype = {
 		if (this.db == null) {
 			this.db = window.openDatabase(this.dbName, this.dbVersion, this.dbDescription, this.dbSize);
 			this.db.transaction(function(tx) {
-				//tx.executeSql('DROP TABLE IF EXISTS MAPEIA_DF');
 				tx.executeSql('CREATE TABLE IF NOT EXISTS MAPEIA_DF (id unique, latitude, longitude)');
 			}, this._errorCB);
 		}
@@ -33,6 +32,8 @@ MapeiaDF.Database.prototype = {
 				self.getInstance().transaction(function(tx) {
 					tx.executeSql('INSERT INTO MAPEIA_DF (id, latitude, longitude) VALUES ('+ self.lastId +', '+ latitude +', '+ longitude +')');
 					self.lastId++;
+					
+					MapeiaDF.Db.countPositions(".quantidade");
 				}, self._errorCB);
 			}
 		}, 250);
@@ -49,6 +50,23 @@ MapeiaDF.Database.prototype = {
 			idsString = idsString.substring(0, idsString.length-1);
 			
 			tx.executeSql('DELETE FROM MAPEIA_DF WHERE id in ('+ idsString +')');
+			
+			MapeiaDF.Db.countPositions(".quantidade");
+		}, self._errorCB);
+	},
+	
+	countPositions: function(selector) {
+		var self = this;
+		
+		self.getInstance().transaction(function(tx) {
+			tx.executeSql('SELECT count(*) as count FROM MAPEIA_DF', [], function(tx, results) {
+				var count = 0;
+				if (results.rows.length > 0) {
+					count = results.rows.item(0).count;
+				}
+				$(selector).text(count);
+				
+			}, self._errorCB);
 		}, self._errorCB);
 	},
 	

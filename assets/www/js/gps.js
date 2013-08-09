@@ -39,6 +39,7 @@ MapeiaDF.GPS.prototype = {
 					if (results.rows.length > 0) {
 						var json = {};
 						json["facebook_user_id"] = "123qwe123";
+						json["linha"] = $("#linha").val();
 
 						var stops = [];
 						for (var i = 0; i < results.rows.length; i++) {
@@ -51,11 +52,11 @@ MapeiaDF.GPS.prototype = {
 						}
 						json["stops"] = stops;
 
-				    $.ajaxSetup({
+						$.ajaxSetup({
 							headers: {"X-Requested-With": "XMLHttpRequest"}
 						});
 						$.ajax({
-							url: "https://192.241.172.109:3000/api/stops/sync",
+							url: "https://mapeiadf.com.br:3000/api/stops/sync",
 							type: "POST",
 							dataType: "json",
 							contentType: "application/json",
@@ -63,9 +64,13 @@ MapeiaDF.GPS.prototype = {
 							success: function(data) {
 								console.log("Sucesso ao salvar! " + data);
 								MapeiaDF.Db.deletePositions(self.sendingResultIds);
+								
+								alert("Pontos sincronizados com sucesso!");
 							},
 							error: function(jqXHR, errorType, exception) {
 								console.log("Error! " + jqXHR.responseText);
+								
+								alert("Erro ao sincronizar pontos! Tente novamente mais tarde...");
 							}
 						});
 					}
