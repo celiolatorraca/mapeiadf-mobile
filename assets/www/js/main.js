@@ -30,6 +30,8 @@ $(function() {
 		dbSize: 1000000
 	});
 	
+	MapeiaDF.Db.countPositions(".quantidade");
+	
 	$("#marcar-ponto").click(function(e) {
 		e.preventDefault();
 		MapeiaDF.Gps.verifyGPS();
@@ -65,6 +67,4 @@ $(function() {
 //			      console.log(response.picture.data.url);
 //			  });
 	});
-	
-	MapeiaDF.Db.countPositions(".quantidade");
 });
