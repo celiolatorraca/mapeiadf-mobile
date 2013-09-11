@@ -1,6 +1,7 @@
 MapeiaDF.GPS = function(params) {
 	this.params = params;
 	this.elementSelector = this.params.selector;
+	this.syncEndPoint = this.params.syncEndPoint;
 	
 	this._init();
 }
@@ -56,7 +57,7 @@ MapeiaDF.GPS.prototype = {
 							headers: {"X-Requested-With": "XMLHttpRequest"}
 						});
 						$.ajax({
-							url: "https://mapeiadf.com.br:3000/api/stops/sync",
+							url: self.syncEndPoint,
 							type: "POST",
 							dataType: "json",
 							contentType: "application/json",

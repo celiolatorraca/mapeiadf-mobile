@@ -23,7 +23,10 @@ function onDeviceReady() {
 }
 
 $(function() {
-	MapeiaDF.Gps = new MapeiaDF.GPS({selector: "#geolocation"});
+	MapeiaDF.Gps = new MapeiaDF.GPS({
+		selector: "#geolocation",
+		syncEndPoint: "https://mapeiadf.com.br/api/stops/sync"
+	});
 	MapeiaDF.Db = new MapeiaDF.Database({
 		dbName: "mapeia-df",
 		dbVersion: "1.0",

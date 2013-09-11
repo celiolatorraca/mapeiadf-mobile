@@ -1,5 +1,6 @@
 package br.org.mapeiadf;
 
+import org.apache.cordova.Config;
 import org.apache.cordova.DroidGap;
 
 import android.os.Bundle;
@@ -17,8 +18,8 @@ public class CatchGeoLocationActivity extends DroidGap {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-//		super.setIntegerProperty("splashscreen", R.drawable.splash);
-//		super.loadUrl(Config.getStartUrl(), 10000);
+		super.setIntegerProperty("splashscreen", R.drawable.splash);
+		super.loadUrl(Config.getStartUrl(), 10000);
 
 		super.loadUrl("file:///android_asset/www/index.html");
 	}
