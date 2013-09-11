@@ -28,7 +28,7 @@ MapeiaDF.GPS.prototype = {
 		});
 	},
 	
-	sendResults: function() {
+	sendResults: function(facebookUserId) {
 		var self = this;
 		
 		if (!self.sendingResults) {
@@ -38,7 +38,7 @@ MapeiaDF.GPS.prototype = {
 				tx.executeSql('SELECT * FROM MAPEIA_DF', [], function(tx, results) {
 					if (results.rows.length > 0) {
 						var json = {};
-						json["facebook_user_id"] = "123qwe123";
+						json["facebook_user_id"] = facebookUserId;
 						json["linha"] = $("#linha").val();
 
 						var stops = [];
