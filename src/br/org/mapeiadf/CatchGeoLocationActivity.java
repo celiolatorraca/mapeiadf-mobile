@@ -19,9 +19,7 @@ public class CatchGeoLocationActivity extends DroidGap {
 		super.onCreate(savedInstanceState);
 		
 		super.setIntegerProperty("splashscreen", R.drawable.splash);
-		super.loadUrl(Config.getStartUrl(), 10000);
-
-		super.loadUrl("file:///android_asset/www/index.html");
+		super.loadUrl(Config.getStartUrl(), 5000);
 	}
 	
 }
