@@ -16,7 +16,11 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.fontsmith_font.ponto-onibus-positivo:before{content:'\e001'}
+.fontsmith_font.addpontos:before{content:'\e001'}
 
-.fontsmith_font.ponto-onibus-negativo:before{content:'\e002'}
+.fontsmith_font.linhas:before{content:'\e002'}
+
+.fontsmith_font.chegar:before{content:'\e003'}
+
+.fontsmith_font.onibus:before{content:'\e004'}
 

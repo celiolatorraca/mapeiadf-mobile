@@ -1,22 +1,34 @@
 body{
-	background-image: url("../img/bg-projeto-mobile.png");
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-attachment: fixed;
-	background-color: #65aba6;
-	background-size: cover;
+	background: #EFECCA;
+	-moz-box-shadow: inset 0 0 100px #A7A468;
+	-webkit-box-shadow: inset 0 0 100px #A7A468;
+	box-shadow: inset 0 0 100px #A7A468; 
 }
+html, body{
+	height: 100%;
+} 
 section {
-	margin: 0 -20px;
-	padding: 0 20px;
+	margin: 0px -20px;
+	padding: 0px 20px;
 }
 footer{
 	padding-top: 20px;
 	text-align: center;
-	color: white;
+	color: #65ABA6;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	margin-left: -20px;
 }
-.content1{
-
+header{
+	margin-bottom: 1em;
+}
+.logo{
+	background: url(../img/icon.png) no-repeat center;
+	width: 96px;
+	height: 96px;
+	font-size: 0px;
+	margin: 0px auto;
 }
 .content2 {
 	box-shadow: inset 0px 7px 13px -6px #0A665B;
@@ -33,14 +45,14 @@ footer{
 	padding: 10px 10px 10px 0;
 	color: #747474;
 }
-.marcador{
+.botao{
 	display: block;
 	width: 100%;
 	padding: 5px;
+	font-weight: ;
 
-	font-size: 5rem;
+	font-size: 2.1rem;
 	color:#AF6507;
-	text-shadow: 0 -1px 0 rgba(104, 62, 0, 0.6);
 
 	background-image: linear-gradient(to bottom,#F7A035, #F7C135);
 	background-image: -webkit-linear-gradient( bottom,#F7A035, #F7C135);
@@ -51,9 +63,23 @@ footer{
 	border: 0px;
 	border-top: 1px solid #FFDD94;
 	border-bottom: 1px solid #C98000;
-	/*box-shadow: 0 1px 8px -3px rgba(0, 0, 0, 0.5);*/
+	-webkit-border-radius: 0.2em;
+	-moz-border-radius: 0.2em;
+	border-radius: 0.2em;
+	margin-bottom: 0.2em;
 }
-.marcador:active{
+.botao-verde{
+	color:#2C6D68;
+	background-image: linear-gradient(to bottom,#9CBE91, #B1DEB5);
+	background-image: -webkit-linear-gradient( bottom,#9CBE91, #B1DEB5);
+	background-image: -o-linear-gradient( bottom,#9CBE91, #B1DEB5);
+	background-image: -moz-linear-gradient( bottom,#9CBE91, #B1DEB5);
+	background-image: -ms-linear-gradient( bottom,#9CBE91, #B1DEB5);
+	background-color: #8BB951;
+	border-top: 1px solid #C4FA93;
+	border-bottom: 1px solid #4E9600;
+}
+.botao:active{
 	background-image: linear-gradient(to bottom,#F7A035,#F7A035);
 	background-image: -webkit-linear-gradient( bottom,#F7A035,#F7A035);
 	background-image: -o-linear-gradient( bottom,#F7A035,#F7A035);
@@ -64,24 +90,49 @@ footer{
 	border-bottom: 1px solid #FFDD94;
 }
 
-.marcador .icone{
-	float: left;
-	padding: 20px 35px 20px 33px;
-	border-right: 1px solid #CC871F;
+.botao-verde:active{
+	background-image: linear-gradient(to bottom, #B1DEB5, #9CBE91);
+	background-image: -webkit-linear-gradient( bottom, #B1DEB5, #9CBE91);
+	background-image: -o-linear-gradient( bottom, #B1DEB5, #9CBE91);
+	background-image: -moz-linear-gradient( bottom, #B1DEB5, #9CBE91);
+	background-image: -ms-linear-gradient( bottom, #B1DEB5, #9CBE91);
+	border-top: 1px solid #4E9600;
+	border-bottom: 1px solid #C4FA93;
 }
-.marcador .texto{
-	font-size: 2.3rem;
-	padding: 0px;
-	line-height: 46px;
+
+.botao .icone{
+	float: left;
+	padding: 0.1rem 0rem;
+	border-right: 1px solid #CC871F;
+	width: 1.5em;
+}
+.botao-verde .icone{
+	border-right: 1px solid #6AA7A2;
+}
+.botao .texto{
+	font-size: 1.1rem;
+	line-height: 1.8em;
 	text-align: center;
 	font-family: "helvetica neue";
-	font-weight: 200;
-	display: inline-block;
-	width: 213px;
-	margin-top: 13px;
 }
 .busca{
 	width: 100%;
+}
+.ponto-marcado {
+	border: 1px solid #65ABA6;
+	border-radius: 0.3em;
+	padding: 0.5em;
+	background: #D1DAA4;
+	position: relative;
+}
+.linha {
+	position: absolute;
+	height: 8px;
+	width: 1px;
+	background: #65ABA6;
+	top: -8px;
+	left: 50%;
+	display: block;
 }
 .sinc-btn{
 	color: #2E5F6F;

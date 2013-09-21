@@ -5,74 +5,35 @@
 		<title>PhoneGap</title>
 		<link rel="stylesheet" type="text/css" href="css/style_main.css">
 		<script type="text/javascript" charset="utf-8" src="js/vendor/jquery-1.10.2.min.js"></script>		
-		<script type="text/javascript" charset="utf-8" src="js/vendor/bootstrap.min.js"></script>		
-
+		<script type="text/javascript" charset="utf-8" src="js/vendor/bootstrap.min.js"></script>	
 	</head>
 	
 	<body>
+		<header>
+			<div class="logo"></div>
+		</header>
+
 		<section class="content1">
-			<div class="navbar navbar-static-top">
-				<div class="navbar-inner">
-	                <div class="container" style="width: auto; padding: 0 20px;">
-	                  <a class="brand" href="#">Title</a>
-	                </div>
-	              </div>
-			</div>
-	
-			<div class="container-fluid" style="padding-top: 11px;">
-				<div class="row-fluid">
-					<div class="span12">
-						<ol>
-							<li>Indique uma linha de &ocirc;nibus para marcar se quiser.</li>
-						</ol>
-						<input class="input-block-level" type="text" placeholder="Digite o n&uacute;mero da linha.">
-						<ol start="2">
-							<li>Aperte o bot&atilde;o para marcar os pontos de&ocirc;nibus</li>
-						</ol>
-					</div>
-				</div>
+			<button type="button" class="botao">
+				<span class="fontsmith_font chegar icone"></span></span><span class="texto">Como chegar?</span>
+			</button>
+			<button type="button" class="botao">
+				<span class="fontsmith_font linhas icone"></span></span><span class="texto">Que &ocirc;nibus passa aqui?</span>
+			</button>
+			<button type="button" class="botao botao-verde" id="marcar-ponto">
+				<span class="fontsmith_font addpontos icone"></span><span class="texto">Marcar ponto de &ocirc;nibus aqui!</span>
+			</button>
+			<div class="ponto-marcado">
+				<div class="linha">&nbsp;</div>
+				<p>Quantidade de pontos marcados: <span class="quantidade badge badge-warning">19</span></p>
+
+				<button type="button" class="btn btn-block btn-large sinc-btn" id="sincronizar">
+					<i class="icon-repeat sinc"></i>Mandar postos marcados.
+				</button>
 			</div>
 		</section>
-		<section class="content1">
-			<div class="container-fluid line-button">
-				<div class="row-fluid">
-					<div class="span12">
-						<button type="button" class="marcador" id="marcar-ponto">
-							<span class="fontsmith_font ponto-onibus-positivo icone"></span><span class="texto">marcar ponto de &ocirc;nibus</span>
-						</button>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="content1 shadow">
-			<div class="container-fluid" style="padding-top: 11px;">
-				<div class="row-fluid">
-					<div class="span12">
-						<ol start="3">
-							<li>Depois de marcar alguns pontos toque em Sincronizar Dados</li>
-						</ol>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="content2">
-			<div class="container-fluid">
-				<div class="row-fluid">
-					<div class="span12">
-						<ol start="4">
-							<li>Quantidade de pontos marcados: <span
-								class="quantidade badge badge-warning">19</span></li>
-						</ol>
-	
-						<button type="button" class="btn btn-block btn-large sinc-btn" id="sincronizar">
-							<i class="icon-repeat sinc"></i>Sincronizar Dados
-						</button>
-					</div>
-				</div>
-			</div>
-			<footer>
-				<p>&copy; Mapeia DF | Company 2013</p>
-			</footer>
-		</section>
+		<footer>
+			<p>&copy; Mapeia DF | Company 2013</p>
+		</footer>
 	</body>
 </html>
