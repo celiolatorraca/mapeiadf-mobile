@@ -1,5 +1,10 @@
 body{
-	background: #65aba6;
+	background-image: url("../img/bg-projeto-mobile.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	background-color: #65aba6;
+	background-size: cover;
 }
 section {
 	margin: 0 -20px;
@@ -11,10 +16,9 @@ footer{
 	color: white;
 }
 .content1{
-	background: url("../img/noise-f1.gif");
+
 }
 .content2 {
-	background: #65aba6;
 	box-shadow: inset 0px 7px 13px -6px #0A665B;
 	padding-top: 10px;
 }
@@ -85,10 +89,8 @@ footer{
 .sinc{
 	margin-right: 19px;
 }
-.content1 .navbar .navbar-inner {
-	background: #353535;
-	border-bottom: 1px solid black;
-	box-shadow: 0px 0 1px 1px white, inset 0px -7px 6px -7px black;
+.content1 .navbar .navbar-inner .brand{
+	background-image: url("../img/marca.png");
 }
 .quantidade {
 	font-size: 1.1rem;
