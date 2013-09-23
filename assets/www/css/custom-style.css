@@ -30,6 +30,24 @@ header{
 	font-size: 0px;
 	margin: 0px auto;
 }
+.overlay {
+	z-index: 1;
+	margin-left:-20px;
+	position: absolute;
+	background: rgba(255, 255, 255, 0.7);
+	width: 100%;
+	height: 100%;
+}
+.overlay.hide {
+	display: none;
+}
+.overlay .loading {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -15px;
+	margin-left: -15px;
+}
 .content2 {
 	box-shadow: inset 0px 7px 13px -6px #0A665B;
 	padding-top: 10px;

@@ -17,47 +17,46 @@
 		<script type="text/javascript" charset="utf-8" src="js/application.js"></script>
 		<script type="text/javascript" charset="utf-8" src="js/gps.js"></script>
 		<script type="text/javascript" charset="utf-8" src="js/database.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/api.js"></script>
 		<script type="text/javascript" charset="utf-8" src="js/facebook.js"></script>
 		<script type="text/javascript" charset="utf-8" src="js/main.js"></script>
 	</head>
 
 	<body>
 		<div id="fb-root"></div>
-		<head>
-			<title>PhoneGap</title>
-			<link rel="stylesheet" type="text/css" href="css/style_main.css">
-			<script type="text/javascript" charset="utf-8" src="js/vendor/jquery-1.10.2.min.js"></script>		
-			<script type="text/javascript" charset="utf-8" src="js/vendor/bootstrap.min.js"></script>	
-		</head>
-
+		
+		<div class="overlay hide">
+			<img src="img/ajax-loader.gif" alt="loading" class="loading" />
+		</div>
+		
 		<header>
 			<div class="logo"></div>
 		</header>
 		
 		<section class="content1">
 			<button type="button" class="botao">
-				<span class="fontsmith_font chegar icone"></span></span><span class="texto">Como chegar?</span>
+				<span class="fontsmith_font chegar icone"></span>
+				<span class="texto">Como chegar?</span>
 			</button>
 			<button type="button" class="botao">
-				<span class="fontsmith_font linhas icone"></span></span><span class="texto">Que onibus passa aqui?</span>
+				<span class="fontsmith_font linhas icone"></span>
+				<span class="texto">Que onibus passa aqui?</span>
 			</button>
 			<button type="button" class="botao botao-verde" id="marcar-ponto">
-				<span class="fontsmith_font addpontos icone"></span><span class="texto">Marcar ponto de &ocirc;nibus</span>
+				<span class="fontsmith_font addpontos icone"></span>
+				<span class="texto">Marcar ponto de &ocirc;nibus</span>
 			</button>
-
-
-<!-- 			<input class="input-block-level" type="text" placeholder="Digite o n&uacute;mero da linha.">
- -->
 
 			<div class="ponto-marcado">
 				<div class="linha">&nbsp;</div>
-				<p>Quantidade de pontos marcados: <span class="quantidade badge badge-warning">19</span></p>
+				<p>Quantidade de pontos marcados: <span class="quantidade badge badge-warning">0</span></p>
 
 				<button type="button" class="btn btn-block btn-large sinc-btn" id="sincronizar">
 					<i class="icon-repeat sinc"></i>Mandar pontos marcados.
 				</button>
 			</div>
 		</section>
+		
 		<footer>
 			<p>&copy; Mapeia DF | Company 2013</p>
 		</footer>

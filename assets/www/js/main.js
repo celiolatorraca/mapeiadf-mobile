@@ -24,8 +24,11 @@ function onDeviceReady() {
 
 $(function() {
 	MapeiaDF.Gps = new MapeiaDF.GPS({
-		selector: "#geolocation",
-		syncEndPoint: "https://mapeiadf.com.br/api/stops/sync"
+		options: {
+			enableHighAccuracy: true,
+			maximumAge: 15000,
+			timeout: 300000
+		}
 	});
 	MapeiaDF.Db = new MapeiaDF.Database({
 		dbName: "mapeia-df",
@@ -33,13 +36,16 @@ $(function() {
 		dbDescription: "Mapeia DF - DB",
 		dbSize: 1000000
 	});
+	MapeiaDF.Api = new MapeiaDF.API({
+		baseEndPoint: "http://mapeiadf.com.br/api",
+		syncEndPoint: "/stops/sync",
+	});
 	
 	MapeiaDF.Db.countPositions(".quantidade");
 	
 	$("#marcar-ponto").click(function(e) {
 		e.preventDefault();
 		MapeiaDF.Gps.verifyGPS();
-		
 		MapeiaDF.Gps.markPosition = true;
 		MapeiaDF.Gps.markPositionTimestamp = new Date().getTime();
 	});
@@ -49,7 +55,7 @@ $(function() {
 		
 		if (navigator.onLine) {
 			MapeiaDF.Fb.withLoggedUser(function(user) {
-				MapeiaDF.Gps.sendResults(user.id);
+				MapeiaDF.Api.sendResults(user.id);
 			});
 		} else {
 			alert("Conecte-se à internet para Enviar seus Pontos!");
