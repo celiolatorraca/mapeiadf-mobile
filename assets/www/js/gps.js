@@ -38,6 +38,12 @@ MapeiaDF.GPS.prototype = {
 		});
 	},
 	
+	getCurrentPosition: function(syncFromServer, callback) {
+		navigator.geolocation.getCurrentPosition(function(position) {
+			syncFromServer(position, callback);
+		}, this.onError, this.options); 
+	},
+	
 	_startWatchingPositions: function() {
 		var self = this;
 		

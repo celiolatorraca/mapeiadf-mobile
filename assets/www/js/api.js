@@ -2,6 +2,7 @@ MapeiaDF.API = function(params) {
 	this.params = params;
 	this.baseEndPoint = this.params.baseEndPoint;
 	this.syncEndPoint = this.params.syncEndPoint;
+	this.stopsAroundEndPoint = this.params.stopsAroundEndPoint;
 	
 	this._init();
 }
@@ -66,6 +67,44 @@ MapeiaDF.API.prototype = {
 			self.sendingResultIds = [];
 			self.sendingResults = false;
 		}
+	},
+	
+	getStopsAround: function(callback) {
+		var self = this;
+		
+		if (!MapeiaDF.Gps.lastPosition) {
+			MapeiaDF.Gps.getCurrentPosition(self._syncFromServer, callback);
+		} else {
+			self._syncFromServer(MapeiaDF.Gps.lastPosition, callback);
+		}
+	},
+	
+	_syncFromServer: function(position, callback) {
+		var self = MapeiaDF.Api;
+		
+		var json = {};
+		json["lat"] = position.coords.latitude+"";
+		json["lng"] = position.coords.longitude+"";
+		json["radius"] = 500;
+		
+		$.ajaxSetup({
+			headers: {"X-Requested-With": "XMLHttpRequest"}
+		});
+		$.ajax({
+			url: self.baseEndPoint + self.stopsAroundEndPoint,
+			type: "POST",
+			dataType: "json",
+			contentType: "application/json",
+			data: JSON.stringify(json),
+			success: function(data) {
+				callback(data);
+			},
+			error: function(jqXHR, errorType, exception) {
+				console.log("Error! " + jqXHR.responseText);
+				
+				alert("Erro ao buscar as paradas mais próximas! Tente novamente mais tarde...");
+			}
+		});
 	}
 	
 }
