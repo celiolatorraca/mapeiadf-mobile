@@ -1,10 +1,10 @@
-package br.org.mapeiadf;
+package br.com.mobee;
 
 import org.apache.cordova.Config;
 import org.apache.cordova.DroidGap;
 
 import android.os.Bundle;
-import br.org.mapeiadf.util.SystemUiHider;
+import br.com.mobee.util.SystemUiHider;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -12,7 +12,7 @@ import br.org.mapeiadf.util.SystemUiHider;
  * 
  * @see SystemUiHider
  */
-public class CatchGeoLocationActivity extends DroidGap {
+public class MobeeActivity extends DroidGap {
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

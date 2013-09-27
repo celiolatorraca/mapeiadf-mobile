@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.org.mapeiadf"
+    package="br.com.mobee"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -28,7 +28,7 @@
         android:theme="@style/AppTheme" >
 
         <activity
-            android:name="br.org.mapeiadf.CatchGeoLocationActivity"
+            android:name="br.com.mobee.MobeeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@style/FullscreenTheme" >

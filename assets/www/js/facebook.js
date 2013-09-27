@@ -1,9 +1,9 @@
-MapeiaDF.Facebook = function(params) {
+Mobee.Facebook = function(params) {
 	this.params = params;
 	this._init();
 }
 
-MapeiaDF.Facebook.prototype = {
+Mobee.Facebook.prototype = {
 	
 	loggedUser: null,
 	loggedIn: false,

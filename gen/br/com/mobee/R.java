@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package br.org.mapeiadf;
+package br.com.mobee;
 
 public final class R {
     public static final class attr {
@@ -216,32 +216,29 @@ containing a value of this type.
         public static final int splash=0x7f020020;
     }
     public static final class id {
-        public static final int com_facebook_login_activity_progress_bar=0x7f050008;
-        public static final int com_facebook_picker_activity_circle=0x7f050007;
-        public static final int com_facebook_picker_checkbox=0x7f05000a;
-        public static final int com_facebook_picker_checkbox_stub=0x7f05000e;
-        public static final int com_facebook_picker_divider=0x7f050012;
-        public static final int com_facebook_picker_done_button=0x7f050011;
-        public static final int com_facebook_picker_image=0x7f05000b;
-        public static final int com_facebook_picker_list_section_header=0x7f05000f;
-        public static final int com_facebook_picker_list_view=0x7f050006;
-        public static final int com_facebook_picker_profile_pic_stub=0x7f05000c;
-        public static final int com_facebook_picker_row_activity_circle=0x7f050009;
-        public static final int com_facebook_picker_title=0x7f05000d;
-        public static final int com_facebook_picker_title_bar=0x7f050014;
-        public static final int com_facebook_picker_title_bar_stub=0x7f050013;
-        public static final int com_facebook_picker_top_bar=0x7f050010;
-        public static final int com_facebook_placepickerfragment_search_box_stub=0x7f050015;
-        public static final int com_facebook_usersettingsfragment_login_button=0x7f05001a;
-        public static final int com_facebook_usersettingsfragment_logo_image=0x7f050018;
-        public static final int com_facebook_usersettingsfragment_profile_name=0x7f050019;
-        public static final int dummy_button=0x7f050005;
-        public static final int fullscreen_content=0x7f050003;
-        public static final int fullscreen_content_controls=0x7f050004;
+        public static final int com_facebook_login_activity_progress_bar=0x7f050005;
+        public static final int com_facebook_picker_activity_circle=0x7f050004;
+        public static final int com_facebook_picker_checkbox=0x7f050007;
+        public static final int com_facebook_picker_checkbox_stub=0x7f05000b;
+        public static final int com_facebook_picker_divider=0x7f05000f;
+        public static final int com_facebook_picker_done_button=0x7f05000e;
+        public static final int com_facebook_picker_image=0x7f050008;
+        public static final int com_facebook_picker_list_section_header=0x7f05000c;
+        public static final int com_facebook_picker_list_view=0x7f050003;
+        public static final int com_facebook_picker_profile_pic_stub=0x7f050009;
+        public static final int com_facebook_picker_row_activity_circle=0x7f050006;
+        public static final int com_facebook_picker_title=0x7f05000a;
+        public static final int com_facebook_picker_title_bar=0x7f050011;
+        public static final int com_facebook_picker_title_bar_stub=0x7f050010;
+        public static final int com_facebook_picker_top_bar=0x7f05000d;
+        public static final int com_facebook_placepickerfragment_search_box_stub=0x7f050012;
+        public static final int com_facebook_usersettingsfragment_login_button=0x7f050017;
+        public static final int com_facebook_usersettingsfragment_logo_image=0x7f050015;
+        public static final int com_facebook_usersettingsfragment_profile_name=0x7f050016;
         public static final int large=0x7f050002;
         public static final int normal=0x7f050001;
-        public static final int picker_subtitle=0x7f050017;
-        public static final int search_box=0x7f050016;
+        public static final int picker_subtitle=0x7f050014;
+        public static final int search_box=0x7f050013;
         public static final int small=0x7f050000;
     }
     public static final class layout {
@@ -287,8 +284,6 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_log_in_button=0x7f060008;
         public static final int com_facebook_usersettingsfragment_logged_in=0x7f060009;
         public static final int com_facebook_usersettingsfragment_not_logged_in=0x7f06000a;
-        public static final int dummy_button=0x7f06001a;
-        public static final int dummy_content=0x7f06001b;
     }
     public static final class style {
         /** 
@@ -339,8 +334,8 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ButtonBarContainerTheme_buttonBarButtonStyle br.org.mapeiadf:buttonBarButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #ButtonBarContainerTheme_buttonBarStyle br.org.mapeiadf:buttonBarStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ButtonBarContainerTheme_buttonBarButtonStyle br.com.mobee:buttonBarButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ButtonBarContainerTheme_buttonBarStyle br.com.mobee:buttonBarStyle}</code></td><td></td></tr>
            </table>
            @see #ButtonBarContainerTheme_buttonBarButtonStyle
            @see #ButtonBarContainerTheme_buttonBarStyle
@@ -349,7 +344,7 @@ containing a value of this type.
             0x7f010012, 0x7f010013
         };
         /**
-          <p>This symbol is the offset where the {@link br.org.mapeiadf.R.attr#buttonBarButtonStyle}
+          <p>This symbol is the offset where the {@link br.com.mobee.R.attr#buttonBarButtonStyle}
           attribute's value can be found in the {@link #ButtonBarContainerTheme} array.
 
 
@@ -359,7 +354,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int ButtonBarContainerTheme_buttonBarButtonStyle = 1;
         /**
-          <p>This symbol is the offset where the {@link br.org.mapeiadf.R.attr#buttonBarStyle}
+          <p>This symbol is the offset where the {@link br.com.mobee.R.attr#buttonBarStyle}
           attribute's value can be found in the {@link #ButtonBarContainerTheme} array.
 
 
@@ -374,7 +369,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #com_facebook_friend_picker_fragment_multi_select br.org.mapeiadf:multi_select}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_friend_picker_fragment_multi_select br.com.mobee:multi_select}</code></td><td></td></tr>
            </table>
            @see #com_facebook_friend_picker_fragment_multi_select
          */
@@ -382,7 +377,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f010007
         };
         /**
-          <p>This symbol is the offset where the {@link br.org.mapeiadf.R.attr#multi_select}
+          <p>This symbol is the offset where the {@link br.com.mobee.R.attr#multi_select}
           attribute's value can be found in the {@link #com_facebook_friend_picker_fragment} array.
 
 
@@ -401,10 +396,10 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #com_facebook_login_view_confirm_logout br.org.mapeiadf:confirm_logout}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_login_view_fetch_user_info br.org.mapeiadf:fetch_user_info}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_login_view_login_text br.org.mapeiadf:login_text}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_login_view_logout_text br.org.mapeiadf:logout_text}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_login_view_confirm_logout br.com.mobee:confirm_logout}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_login_view_fetch_user_info br.com.mobee:fetch_user_info}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_login_view_login_text br.com.mobee:login_text}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_login_view_logout_text br.com.mobee:logout_text}</code></td><td></td></tr>
            </table>
            @see #com_facebook_login_view_confirm_logout
            @see #com_facebook_login_view_fetch_user_info
@@ -415,7 +410,7 @@ containing a value of this type.
             0x7f01000c, 0x7f01000d, 0x7f01000e, 0x7f01000f
         };
         /**
-          <p>This symbol is the offset where the {@link br.org.mapeiadf.R.attr#confirm_logout}
+          <p>This symbol is the offset where the {@link br.com.mobee.R.attr#confirm_logout}
           attribute's value can be found in the {@link #com_facebook_login_view} array.
 
 
@@ -429,7 +424,7 @@ containing a value of this type.
         */
         public static final int com_facebook_login_view_confirm_logout = 0;
         /**
-          <p>This symbol is the offset where the {@link br.org.mapeiadf.R.attr#fetch_user_info}
+          <p>This symbol is the offset where the {@link br.com.mobee.R.attr#fetch_user_info}
           attribute's value can be found in the {@link #com_facebook_login_view} array.
 
 
@@ -443,7 +438,7 @@ containing a value of this type.
         */
         public static final int com_facebook_login_view_fetch_user_info = 1;
         /**
-          <p>This symbol is the offset where the {@link br.org.mapeiadf.R.attr#login_text}
+          <p>This symbol is the offset where the {@link br.com.mobee.R.attr#login_text}
           attribute's value can be found in the {@link #com_facebook_login_view} array.
 
 
@@ -457,7 +452,7 @@ containing a value of this type.
         */
         public static final int com_facebook_login_view_login_text = 2;
         /**
-          <p>This symbol is the offset where the {@link br.org.mapeiadf.R.attr#logout_text}
+          <p>This symbol is the offset where the {@link br.com.mobee.R.attr#logout_text}
           attribute's value can be found in the {@link #com_facebook_login_view} array.
 
 
@@ -476,13 +471,13 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #com_facebook_picker_fragment_done_button_background br.org.mapeiadf:done_button_background}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_picker_fragment_done_button_text br.org.mapeiadf:done_button_text}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_picker_fragment_extra_fields br.org.mapeiadf:extra_fields}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_picker_fragment_show_pictures br.org.mapeiadf:show_pictures}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_picker_fragment_show_title_bar br.org.mapeiadf:show_title_bar}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_picker_fragment_title_bar_background br.org.mapeiadf:title_bar_background}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_picker_fragment_title_text br.org.mapeiadf:title_text}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_picker_fragment_done_button_background br.com.mobee:done_button_background}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_picker_fragment_done_button_text br.com.mobee:done_button_text}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_picker_fragment_extra_fields br.com.mobee:extra_fields}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_picker_fragment_show_pictures br.com.mobee:show_pictures}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_picker_fragment_show_title_bar br.com.mobee:show_title_bar}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_picker_fragment_title_bar_background br.com.mobee:title_bar_background}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_picker_fragment_title_text br.com.mobee:title_text}</code></td><td></td></tr>
            </table>
            @see #com_facebook_picker_fragment_done_button_background
            @see #com_facebook_picker_fragment_done_button_text
@@ -497,7 +492,7 @@ containing a value of this type.
             0x7f010004, 0x7f010005, 0x7f010006
         };
         /**
-          <p>This symbol is the offset where the {@link br.org.mapeiadf.R.attr#done_button_background}
+          <p>This symbol is the offset where the {@link br.com.mobee.R.attr#done_button_background}
           attribute's value can be found in the {@link #com_facebook_picker_fragment} array.
 
 
@@ -507,7 +502,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int com_facebook_picker_fragment_done_button_background = 6;
         /**
-          <p>This symbol is the offset where the {@link br.org.mapeiadf.R.attr#done_button_text}
+          <p>This symbol is the offset where the {@link br.com.mobee.R.attr#done_button_text}
           attribute's value can be found in the {@link #com_facebook_picker_fragment} array.
 
 
@@ -521,7 +516,7 @@ containing a value of this type.
         */
         public static final int com_facebook_picker_fragment_done_button_text = 4;
         /**
-          <p>This symbol is the offset where the {@link br.org.mapeiadf.R.attr#extra_fields}
+          <p>This symbol is the offset where the {@link br.com.mobee.R.attr#extra_fields}
           attribute's value can be found in the {@link #com_facebook_picker_fragment} array.
 
 
@@ -535,7 +530,7 @@ containing a value of this type.
         */
         public static final int com_facebook_picker_fragment_extra_fields = 1;
         /**
-          <p>This symbol is the offset where the {@link br.org.mapeiadf.R.attr#show_pictures}
+          <p>This symbol is the offset where the {@link br.com.mobee.R.attr#show_pictures}
           attribute's value can be found in the {@link #com_facebook_picker_fragment} array.
 
 
@@ -549,7 +544,7 @@ containing a value of this type.
         */
         public static final int com_facebook_picker_fragment_show_pictures = 0;
         /**
-          <p>This symbol is the offset where the {@link br.org.mapeiadf.R.attr#show_title_bar}
+          <p>This symbol is the offset where the {@link br.com.mobee.R.attr#show_title_bar}
           attribute's value can be found in the {@link #com_facebook_picker_fragment} array.
 
 
@@ -563,7 +558,7 @@ containing a value of this type.
         */
         public static final int com_facebook_picker_fragment_show_title_bar = 2;
         /**
-          <p>This symbol is the offset where the {@link br.org.mapeiadf.R.attr#title_bar_background}
+          <p>This symbol is the offset where the {@link br.com.mobee.R.attr#title_bar_background}
           attribute's value can be found in the {@link #com_facebook_picker_fragment} array.
 
 
@@ -573,7 +568,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         */
         public static final int com_facebook_picker_fragment_title_bar_background = 5;
         /**
-          <p>This symbol is the offset where the {@link br.org.mapeiadf.R.attr#title_text}
+          <p>This symbol is the offset where the {@link br.com.mobee.R.attr#title_text}
           attribute's value can be found in the {@link #com_facebook_picker_fragment} array.
 
 
@@ -592,10 +587,10 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #com_facebook_place_picker_fragment_radius_in_meters br.org.mapeiadf:radius_in_meters}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_place_picker_fragment_results_limit br.org.mapeiadf:results_limit}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_place_picker_fragment_search_text br.org.mapeiadf:search_text}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_place_picker_fragment_show_search_box br.org.mapeiadf:show_search_box}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_place_picker_fragment_radius_in_meters br.com.mobee:radius_in_meters}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_place_picker_fragment_results_limit br.com.mobee:results_limit}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_place_picker_fragment_search_text br.com.mobee:search_text}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_place_picker_fragment_show_search_box br.com.mobee:show_search_box}</code></td><td></td></tr>
            </table>
            @see #com_facebook_place_picker_fragment_radius_in_meters
            @see #com_facebook_place_picker_fragment_results_limit
@@ -606,7 +601,7 @@ containing a value of this type.
             0x7f010008, 0x7f010009, 0x7f01000a, 0x7f01000b
         };
         /**
-          <p>This symbol is the offset where the {@link br.org.mapeiadf.R.attr#radius_in_meters}
+          <p>This symbol is the offset where the {@link br.com.mobee.R.attr#radius_in_meters}
           attribute's value can be found in the {@link #com_facebook_place_picker_fragment} array.
 
 
@@ -620,7 +615,7 @@ containing a value of this type.
         */
         public static final int com_facebook_place_picker_fragment_radius_in_meters = 0;
         /**
-          <p>This symbol is the offset where the {@link br.org.mapeiadf.R.attr#results_limit}
+          <p>This symbol is the offset where the {@link br.com.mobee.R.attr#results_limit}
           attribute's value can be found in the {@link #com_facebook_place_picker_fragment} array.
 
 
@@ -634,7 +629,7 @@ containing a value of this type.
         */
         public static final int com_facebook_place_picker_fragment_results_limit = 1;
         /**
-          <p>This symbol is the offset where the {@link br.org.mapeiadf.R.attr#search_text}
+          <p>This symbol is the offset where the {@link br.com.mobee.R.attr#search_text}
           attribute's value can be found in the {@link #com_facebook_place_picker_fragment} array.
 
 
@@ -648,7 +643,7 @@ containing a value of this type.
         */
         public static final int com_facebook_place_picker_fragment_search_text = 2;
         /**
-          <p>This symbol is the offset where the {@link br.org.mapeiadf.R.attr#show_search_box}
+          <p>This symbol is the offset where the {@link br.com.mobee.R.attr#show_search_box}
           attribute's value can be found in the {@link #com_facebook_place_picker_fragment} array.
 
 
@@ -667,8 +662,8 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #com_facebook_profile_picture_view_is_cropped br.org.mapeiadf:is_cropped}</code></td><td></td></tr>
-           <tr><td><code>{@link #com_facebook_profile_picture_view_preset_size br.org.mapeiadf:preset_size}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_profile_picture_view_is_cropped br.com.mobee:is_cropped}</code></td><td></td></tr>
+           <tr><td><code>{@link #com_facebook_profile_picture_view_preset_size br.com.mobee:preset_size}</code></td><td></td></tr>
            </table>
            @see #com_facebook_profile_picture_view_is_cropped
            @see #com_facebook_profile_picture_view_preset_size
@@ -677,7 +672,7 @@ containing a value of this type.
             0x7f010010, 0x7f010011
         };
         /**
-          <p>This symbol is the offset where the {@link br.org.mapeiadf.R.attr#is_cropped}
+          <p>This symbol is the offset where the {@link br.com.mobee.R.attr#is_cropped}
           attribute's value can be found in the {@link #com_facebook_profile_picture_view} array.
 
 
@@ -691,7 +686,7 @@ containing a value of this type.
         */
         public static final int com_facebook_profile_picture_view_is_cropped = 1;
         /**
-          <p>This symbol is the offset where the {@link br.org.mapeiadf.R.attr#preset_size}
+          <p>This symbol is the offset where the {@link br.com.mobee.R.attr#preset_size}
           attribute's value can be found in the {@link #com_facebook_profile_picture_view} array.
 
 

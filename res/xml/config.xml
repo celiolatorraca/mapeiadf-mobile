@@ -20,10 +20,10 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         id        = "io.cordova.helloCordova"
         version   = "2.0.0">
-    <name>MapeiaDF</name>
+    <name>Mobee</name>
 
     <description>
-        Mapeia transporte publico do DF
+        Mobee - Mapeando o transporte publico do DF
     </description>
 
     <author href="http://cordova.io" email="dev@cordova.apache.org">
@@ -32,17 +32,9 @@
 
     <access origin="*"/>
 
-    <!-- <content src="http://mysite.com/myapp.html" /> for external pages -->
     <content src="index.html" />
 
     <preference name="loglevel" value="DEBUG" />
-    <!--
-      <preference name="splashscreen" value="resourceName" />
-      <preference name="backgroundColor" value="0xFFF" />
-      <preference name="loadUrlTimeoutValue" value="20000" />
-      <preference name="InAppBrowserStorageEnabled" value="true" />
-      <preference name="disallowOverscroll" value="true" />
-    -->
 
 	<plugin name="GpsDetectionPlugin" value="com.butterflyeffect.plugins.GPSDetectionPlugin" />
 	<plugin name="Storage" value="org.apache.cordova.Storage" />

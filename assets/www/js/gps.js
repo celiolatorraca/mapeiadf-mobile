@@ -1,11 +1,11 @@
-MapeiaDF.GPS = function(params) {
+Mobee.GPS = function(params) {
 	this.params = params;
 	this.options = this.params.options;
 	
 	this._init();
 }
 
-MapeiaDF.GPS.prototype = {
+Mobee.GPS.prototype = {
 	
 	markPosition: false,
 	markPositionTimestamp: null,
@@ -26,7 +26,7 @@ MapeiaDF.GPS.prototype = {
 	},
 	
 	showResults: function() {
-		MapeiaDF.Db.getInstance().transaction(function(tx) {
+		Mobee.Db.getInstance().transaction(function(tx) {
 			tx.executeSql('SELECT * FROM MAPEIA_DF', [], function(tx, results) {
 				alert("Returned rows = " + results.rows.length);
 			    
@@ -52,9 +52,9 @@ MapeiaDF.GPS.prototype = {
 				self.markPosition = false;
 				
 				if (self.lastPosition == null || (position.timestamp - self.markPositionTimestamp) < (self.markPositionTimestamp - self.lastPosition.timestamp)) {
-					MapeiaDF.Db.savePosition(position.coords.latitude, position.coords.longitude);
+					Mobee.Db.savePosition(position.coords.latitude, position.coords.longitude);
 				} else {
-					MapeiaDF.Db.savePosition(self.lastPosition.coords.latitude, self.lastPosition.coords.longitude);
+					Mobee.Db.savePosition(self.lastPosition.coords.latitude, self.lastPosition.coords.longitude);
 				}
 			}
 			
@@ -64,6 +64,6 @@ MapeiaDF.GPS.prototype = {
 	},
 	
 	_onError: function(error) {
-	    alert("Error: "+error);
+	    console.log("Error: "+error);
 	}
 }

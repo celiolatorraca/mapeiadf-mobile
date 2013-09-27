@@ -1,4 +1,4 @@
-MapeiaDF.API = function(params) {
+Mobee.API = function(params) {
 	this.params = params;
 	this.baseEndPoint = this.params.baseEndPoint;
 	this.syncEndPoint = this.params.syncEndPoint;
@@ -7,7 +7,7 @@ MapeiaDF.API = function(params) {
 	this._init();
 }
 
-MapeiaDF.API.prototype = {
+Mobee.API.prototype = {
 	
 	sendingResults: false,
 	sendingResultIds: [],
@@ -22,7 +22,7 @@ MapeiaDF.API.prototype = {
 		if (!self.sendingResults) {
 			self.sendingResults = true;
 			
-			MapeiaDF.Db.getInstance().transaction(function(tx) {
+			Mobee.Db.getInstance().transaction(function(tx) {
 				tx.executeSql('SELECT * FROM MAPEIA_DF', [], function(tx, results) {
 					if (results.rows.length > 0) {
 						var json = {};
@@ -50,7 +50,7 @@ MapeiaDF.API.prototype = {
 							contentType: "application/json",
 							data: JSON.stringify(json),
 							success: function(data) {
-								MapeiaDF.Db.deletePositions(self.sendingResultIds);
+								Mobee.Db.deletePositions(self.sendingResultIds);
 								
 								alert("Pontos sincronizados com sucesso!");
 							},
@@ -72,15 +72,15 @@ MapeiaDF.API.prototype = {
 	getStopsAround: function(callback) {
 		var self = this;
 		
-		if (!MapeiaDF.Gps.lastPosition) {
-			MapeiaDF.Gps.getCurrentPosition(self._syncFromServer, callback);
+		if (!Mobee.Gps.lastPosition) {
+			Mobee.Gps.getCurrentPosition(self._syncFromServer, callback);
 		} else {
-			self._syncFromServer(MapeiaDF.Gps.lastPosition, callback);
+			self._syncFromServer(Mobee.Gps.lastPosition, callback);
 		}
 	},
 	
 	_syncFromServer: function(position, callback) {
-		var self = MapeiaDF.Api;
+		var self = Mobee.Api;
 		
 		var json = {};
 		json["lat"] = position.coords.latitude+"";
@@ -101,8 +101,6 @@ MapeiaDF.API.prototype = {
 			},
 			error: function(jqXHR, errorType, exception) {
 				console.log("Error! " + jqXHR.responseText);
-				
-				alert("Erro ao buscar as paradas mais próximas! Tente novamente mais tarde...");
 			}
 		});
 	}
