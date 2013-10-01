@@ -180,3 +180,19 @@ header{
 .shadow{
 	box-shadow: inset 0px 13px 10px -9px rgba(255, 255, 255, 0.74);
 }
+.stops ul{
+	list-style: none;
+	margin: 0 -20px;
+	overflow: auto;
+	height: 300px;
+	box-shadow: 0 -3px 3px -3px #A7A468, 0 3px 3px -3px #C7C59B;;
+}
+.stops ul li{
+	border-bottom: 1px solid rgba(44, 109, 104, 0.33);
+}
+.stops ul li a{
+	padding: 15px 10px 15px 50px;
+	background: white;
+	display: block;
+	color: #2C6D68;
+}
