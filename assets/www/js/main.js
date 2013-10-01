@@ -1,58 +1,26 @@
-//FB.Event.subscribe('auth.login', function(response) {
-//	if (response.error) {
-//		console.log(JSON.stringify(response.error));
-//	} else {
-//		console.log(JSON.stringify(response.data));
-//	}
-//	alert('auth.login event');
-//});
-//FB.Event.subscribe('auth.logout', function(response) {
-//	alert('auth.logout event');
-//});
-//FB.Event.subscribe('auth.sessionChange', function(response) {
-//	alert('auth.sessionChange event');
-//});
-//FB.Event.subscribe('auth.statusChange', function(response) {
-//	alert('auth.statusChange event');
-//});
-
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
 	FB.init({ appId: "119817438197601", nativeInterface: CDV.FB, useCachedDialogs: false });
-	MapeiaDF.Fb = new MapeiaDF.Facebook();
+	Mobee.Fb = new Mobee.Facebook();
 }
 
 $(function() {
-	MapeiaDF.Gps = new MapeiaDF.GPS({
-		selector: "#geolocation",
-		syncEndPoint: "https://mapeiadf.com.br/api/stops/sync"
+	Mobee.Gps = new Mobee.GPS({
+		options: {
+			enableHighAccuracy: true,
+			maximumAge: 15000,
+			timeout: 300000
+		}
 	});
-	MapeiaDF.Db = new MapeiaDF.Database({
+	Mobee.Db = new Mobee.Database({
 		dbName: "mapeia-df",
 		dbVersion: "1.0",
 		dbDescription: "Mapeia DF - DB",
 		dbSize: 1000000
 	});
-	
-	MapeiaDF.Db.countPositions(".quantidade");
-	
-	$("#marcar-ponto").click(function(e) {
-		e.preventDefault();
-		MapeiaDF.Gps.verifyGPS();
-		
-		MapeiaDF.Gps.markPosition = true;
-		MapeiaDF.Gps.markPositionTimestamp = new Date().getTime();
-	});
-	
-	$("#sincronizar").click(function(e) {
-		e.preventDefault();
-		
-		if (navigator.onLine) {
-			MapeiaDF.Fb.withLoggedUser(function(user) {
-				MapeiaDF.Gps.sendResults(user.id);
-			});
-		} else {
-			alert("Conecte-se à internet para Enviar seus Pontos!");
-		}
+	Mobee.Api = new Mobee.API({
+		baseEndPoint: "http://Mobee.com.br/api",
+		syncEndPoint: "/stops/sync",
+		stopsAroundEndPoint: "/stops/stops_around"
 	});
 });

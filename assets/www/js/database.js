@@ -1,4 +1,4 @@
-MapeiaDF.Database = function(params) {
+Mobee.Database = function(params) {
 	this.params = params;
 	this.dbName = this.params.dbName;
 	this.dbVersion = this.params.dbVersion;
@@ -6,7 +6,7 @@ MapeiaDF.Database = function(params) {
 	this.dbSize = this.params.dbSize;
 }
 
-MapeiaDF.Database.prototype = {
+Mobee.Database.prototype = {
 	
 	db: null,
 	lastId: null,
@@ -15,7 +15,7 @@ MapeiaDF.Database.prototype = {
 		if (this.db == null) {
 			this.db = window.openDatabase(this.dbName, this.dbVersion, this.dbDescription, this.dbSize);
 			this.db.transaction(function(tx) {
-				tx.executeSql('CREATE TABLE IF NOT EXISTS MAPEIA_DF (id unique, latitude, longitude)');
+				tx.executeSql('CREATE TABLE IF NOT EXISTS MOBEE (id unique, latitude, longitude)');
 			}, this._errorCB);
 		}
 		return this.db;
@@ -30,10 +30,10 @@ MapeiaDF.Database.prototype = {
 				clearInterval(intervalId);
 				
 				self.getInstance().transaction(function(tx) {
-					tx.executeSql('INSERT INTO MAPEIA_DF (id, latitude, longitude) VALUES ('+ self.lastId +', '+ latitude +', '+ longitude +')');
+					tx.executeSql('INSERT INTO MOBEE (id, latitude, longitude) VALUES ('+ self.lastId +', '+ latitude +', '+ longitude +')');
 					self.lastId++;
 					
-					MapeiaDF.Db.countPositions(".quantidade");
+					Mobee.Db.countPositions(".quantidade");
 				}, self._errorCB);
 			}
 		}, 250);
@@ -49,9 +49,9 @@ MapeiaDF.Database.prototype = {
 			}
 			idsString = idsString.substring(0, idsString.length-1);
 			
-			tx.executeSql('DELETE FROM MAPEIA_DF WHERE id in ('+ idsString +')');
+			tx.executeSql('DELETE FROM MOBEE WHERE id in ('+ idsString +')');
 			
-			MapeiaDF.Db.countPositions(".quantidade");
+			Mobee.Db.countPositions(".quantidade");
 		}, self._errorCB);
 	},
 	
@@ -59,7 +59,7 @@ MapeiaDF.Database.prototype = {
 		var self = this;
 		
 		self.getInstance().transaction(function(tx) {
-			tx.executeSql('SELECT count(*) as count FROM MAPEIA_DF', [], function(tx, results) {
+			tx.executeSql('SELECT count(*) as count FROM MOBEE', [], function(tx, results) {
 				var count = 0;
 				if (results.rows.length > 0) {
 					count = results.rows.item(0).count;
@@ -74,7 +74,7 @@ MapeiaDF.Database.prototype = {
 		var self = this;
 		
 		self.getInstance().transaction(function(tx) {
-			tx.executeSql('SELECT * FROM MAPEIA_DF ORDER BY id DESC', [], function(tx, results) {
+			tx.executeSql('SELECT * FROM MOBEE ORDER BY id DESC', [], function(tx, results) {
 				if (results.rows.length > 0) {
 					self.lastId = results.rows.item(0).id + 1;
 				} else {

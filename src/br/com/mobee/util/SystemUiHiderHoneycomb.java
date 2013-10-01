@@ -1,4 +1,4 @@
-package br.org.mapeiadf.util;
+package br.com.mobee.util;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

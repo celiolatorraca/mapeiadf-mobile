@@ -1,23 +1,19 @@
-MapeiaDF.GPS = function(params) {
+Mobee.GPS = function(params) {
 	this.params = params;
-	this.elementSelector = this.params.selector;
-	this.syncEndPoint = this.params.syncEndPoint;
+	this.options = this.params.options;
 	
 	this._init();
 }
 
-MapeiaDF.GPS.prototype = {
+Mobee.GPS.prototype = {
 	
 	markPosition: false,
 	markPositionTimestamp: null,
 	lastPosition: null,
-	sendingResults: false,
-	sendingResultIds: [],
-	options: {enableHighAccuracy: true, maximumAge: 15000, timeout: 300000},
 	
 	_init: function() {
 		this.verifyGPS();
-		this._startWatchingPositions(this.elementSelector);
+		this._startWatchingPositions();
 	},
 
 	verifyGPS: function() {
@@ -29,62 +25,8 @@ MapeiaDF.GPS.prototype = {
 		});
 	},
 	
-	sendResults: function(facebookUserId) {
-		var self = this;
-		
-		if (!self.sendingResults) {
-			self.sendingResults = true;
-			
-			MapeiaDF.Db.getInstance().transaction(function(tx) {
-				tx.executeSql('SELECT * FROM MAPEIA_DF', [], function(tx, results) {
-					if (results.rows.length > 0) {
-						var json = {};
-						json["facebook_user_id"] = facebookUserId;
-						json["linha"] = $("#linha").val();
-
-						var stops = [];
-						for (var i = 0; i < results.rows.length; i++) {
-							self.sendingResultIds.push(results.rows.item(i).id);
-
-							stops.push({
-								lat: results.rows.item(i).latitude,
-								lng: results.rows.item(i).longitude
-							});
-						}
-						json["stops"] = stops;
-
-						$.ajaxSetup({
-							headers: {"X-Requested-With": "XMLHttpRequest"}
-						});
-						$.ajax({
-							url: self.syncEndPoint,
-							type: "POST",
-							dataType: "json",
-							contentType: "application/json",
-							data: JSON.stringify(json),
-							success: function(data) {
-								console.log("Sucesso ao salvar! " + data);
-								MapeiaDF.Db.deletePositions(self.sendingResultIds);
-								
-								alert("Pontos sincronizados com sucesso!");
-							},
-							error: function(jqXHR, errorType, exception) {
-								console.log("Error! " + jqXHR.responseText);
-								
-								alert("Erro ao sincronizar pontos! Tente novamente mais tarde...");
-							}
-						});
-					}
-				});
-			});
-			
-			self.sendingResultIds = [];
-			self.sendingResults = false;
-		}
-	},
-	
 	showResults: function() {
-		MapeiaDF.Db.getInstance().transaction(function(tx) {
+		Mobee.Db.getInstance().transaction(function(tx) {
 			tx.executeSql('SELECT * FROM MAPEIA_DF', [], function(tx, results) {
 				alert("Returned rows = " + results.rows.length);
 			    
@@ -96,29 +38,23 @@ MapeiaDF.GPS.prototype = {
 		});
 	},
 	
-	_startWatchingPositions: function(elementSelector) {
+	getCurrentPosition: function(syncFromServer, callback) {
+		navigator.geolocation.getCurrentPosition(function(position) {
+			syncFromServer(position, callback);
+		}, this.onError, this.options); 
+	},
+	
+	_startWatchingPositions: function() {
 		var self = this;
 		
 		navigator.geolocation.watchPosition(function(position) {
-			if (elementSelector != null) {
-				var element = $(elementSelector);
-				element.html('Latitude: '          	+ position.coords.latitude              + '<br />' +
-			    		     'Longitude: '          + position.coords.longitude             + '<br />' +
-			            	 'Altitude: '           + position.coords.altitude              + '<br />' +
-			                 'Accuracy: '           + position.coords.accuracy              + '<br />' +
-			                 'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
-			                 'Heading: '            + position.coords.heading               + '<br />' +
-			                 'Speed: '              + position.coords.speed                 + '<br />' +
-			                 'Timestamp: '          + position.timestamp          		    + '<br />');
-			}
-			
 			if (self.markPosition) {
 				self.markPosition = false;
 				
 				if (self.lastPosition == null || (position.timestamp - self.markPositionTimestamp) < (self.markPositionTimestamp - self.lastPosition.timestamp)) {
-					MapeiaDF.Db.savePosition(position.coords.latitude, position.coords.longitude);
+					Mobee.Db.savePosition(position.coords.latitude, position.coords.longitude);
 				} else {
-					MapeiaDF.Db.savePosition(self.lastPosition.coords.latitude, self.lastPosition.coords.longitude);
+					Mobee.Db.savePosition(self.lastPosition.coords.latitude, self.lastPosition.coords.longitude);
 				}
 			}
 			
@@ -128,6 +64,6 @@ MapeiaDF.GPS.prototype = {
 	},
 	
 	_onError: function(error) {
-	    alert("Error: "+error);
+	    console.log("Error: "+error);
 	}
 }

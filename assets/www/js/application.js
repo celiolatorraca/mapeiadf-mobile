@@ -1,6 +1,6 @@
-window.MapeiaDF = {
+window.Mobee = {
 	Db: null,
 	Gps: null
 }
 
-var MapeiaDF = window.MapeiaDF;
+var Mobee = window.Mobee;
