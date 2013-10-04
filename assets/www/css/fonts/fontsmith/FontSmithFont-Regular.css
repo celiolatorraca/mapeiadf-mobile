@@ -18,9 +18,13 @@
 
 .fontsmith_font.addpontos:before{content:'\e001'}
 
-.fontsmith_font.linhas:before{content:'\e002'}
+.fontsmith_font.onibus_ponto:before{content:'\e002'}
 
-.fontsmith_font.chegar:before{content:'\e003'}
+.fontsmith_font.linhas:before{content:'\e003'}
 
-.fontsmith_font.onibus:before{content:'\e004'}
+.fontsmith_font.chegar:before{content:'\e004'}
+
+.fontsmith_font.onibus_ponto_duvida:before{content:'\e005'}
+
+.fontsmith_font.onibus:before{content:'\e006'}
 

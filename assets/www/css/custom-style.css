@@ -8,8 +8,6 @@ html, body{
 	height: 100%;
 } 
 section {
-	margin: 0px -20px;
-	padding: 0px 20px;
 }
 footer{
 	padding-top: 20px;
@@ -21,7 +19,7 @@ footer{
 	margin-left: -20px;
 }
 header{
-	margin-bottom: 1em;
+	margin-bottom: 0em;
 }
 .logo{
 	background: url(../img/icon.png) no-repeat center;
@@ -184,15 +182,40 @@ header{
 	list-style: none;
 	margin: 0 -20px;
 	overflow: auto;
-	height: 300px;
-	box-shadow: 0 -3px 3px -3px #A7A468, 0 3px 3px -3px #C7C59B;;
+	height: 274px;
+	/*box-shadow: 0 0px 12px 0px #A7A468;*/
 }
 .stops ul li{
 	border-bottom: 1px solid rgba(44, 109, 104, 0.33);
 }
 .stops ul li a{
-	padding: 15px 10px 15px 50px;
+	padding: 8px 10px 8px 10px;
 	background: white;
 	display: block;
 	color: #2C6D68;
+}
+.stops ul li a:hover, .stops ul li a:active{
+	text-decoration: none;
+}
+.stops ul li a span {
+	font-size: 2em;
+	padding: 0 6px 0 0;
+}
+.stops p {
+	background: #2C6D68;
+	margin: 0 -20px;
+	padding: 10px 5px;
+	color: #fff;
+	box-shadow: 0 1px 4px 0px rgba(0,0,0,0.5);
+	z-index: 1;
+	position: relative;
+}
+.verde{
+	color:#6EAC00;
+}
+.amarelo{
+	color:#ACA500;
+}
+.vermelho{
+	color:#AC3700;
 }
