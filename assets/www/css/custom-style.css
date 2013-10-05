@@ -9,14 +9,47 @@ html, body{
 } 
 section {
 }
+.header{
+	background: #EFECCA;
+	-moz-box-shadow: inset 0 0 100px #A7A468;
+	-webkit-box-shadow: inset 0 0 100px #A7A468;
+	box-shadow: inset 0 0 100px #A7A468; 
+	position: fixed;
+	width: 100%;
+	margin-left: -20px;
+}
+.header p {
+	background: #2C6D68;
+	margin: 0;
+	padding: 10px 5px;
+	color: #fff;
+	box-shadow: 0 1px 4px 0px rgba(0,0,0,0.5);
+	z-index: 1;
+	position: relative;
+}
+.header .retornar {
+	padding: 10px 13px;
+	background: #2C6D68;
+	position: fixed;
+	top: 14px;
+	border-radius: 0 0.4em 0.4em 0;
+}
+.header .menu {
+	padding: 10px 13px;
+	background: #2C6D68;
+	position: fixed;
+	top: 14px;
+	right: 0;
+	border-radius: 0.4em 0 0 0.4em;
+}
 footer{
-	padding-top: 20px;
+	padding: 20px 0 2px;
 	text-align: center;
 	color: #65ABA6;
 	position: absolute;
 	bottom: 0px;
 	width: 100%;
-	margin-left: -20px;
+	left: 0;
 }
 header{
 	margin-bottom: 0em;
@@ -178,12 +211,12 @@ header{
 .shadow{
 	box-shadow: inset 0px 13px 10px -9px rgba(255, 255, 255, 0.74);
 }
+.stops {
+	padding-top: 136px;
+}
 .stops ul{
 	list-style: none;
 	margin: 0 -20px;
-	overflow: auto;
-	height: 274px;
-	/*box-shadow: 0 0px 12px 0px #A7A468;*/
 }
 .stops ul li{
 	border-bottom: 1px solid rgba(44, 109, 104, 0.33);
@@ -197,18 +230,19 @@ header{
 .stops ul li a:hover, .stops ul li a:active{
 	text-decoration: none;
 }
-.stops ul li a span {
+.stops ul li a span.icone {
 	font-size: 2em;
 	padding: 0 6px 0 0;
 }
-.stops p {
-	background: #2C6D68;
-	margin: 0 -20px;
-	padding: 10px 5px;
-	color: #fff;
-	box-shadow: 0 1px 4px 0px rgba(0,0,0,0.5);
-	z-index: 1;
+.stops ul li a span.distance {
+	float: right;
+	background: rgb(255, 255, 255);
+	height: 18px;
+	padding: 9px 0 0 5px;
+}
+.footer-stop{
 	position: relative;
+	padding: 20px 0;
 }
 .verde{
 	color:#6EAC00;

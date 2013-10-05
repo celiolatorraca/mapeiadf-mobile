@@ -26,30 +26,25 @@
 
 	<body>
 		<div id="fb-root"></div>
-		
-		<div class="overlay hide">
-			<img src="img/ajax-loader.gif" alt="loading" class="loading" />
-		</div>
-		
-		<header>
-			<div class="logo"></div>
-		</header>
+		<section class="header">
+			<div class="retornar" id="retornar"><i class="icon-chevron-left icon-white"></i></div>
+			<!-- <div class="menu"><i class="icon-list icon-white"></i></div> -->
+			
+			<div class="overlay hide">
+				<img src="img/ajax-loader.gif" alt="loading" class="loading" />
+			</div>
+			
+			<header>
+				<div class="logo"></div>
+			</header>
+			<p>Escolha um ponto de &ocirc;nibus para ver as linhas.</p>
+		</section>
 		<section class="content1 stops">
-			<p>Escolha um ponto de &ocirc;nibus e veja as linhas</p>
-			<ul>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone verde"></span> SQS 110/111 ponto 1 - 100m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone amarelo"></span> SQS 110/111 ponto 2 - 110m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone vermelho"></span> SQS 110/111 ponto 3 - 120m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone "></span> SQS 210/211 ponto 1 - 100m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone verde"></span> SQS 210/211 ponto 2 - 110m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone amarelo"></span> SQS 210/211 ponto 3 - 120m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone vermelho"></span> SQS 110/111 ponto 3 - 120m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone verde"></span> 210/211 ponto 1 - 100m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone amarelo"></span> SQS 210/211 ponto 2 - 110m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone vermelho"></span> SQS 210/211 ponto 3 - 120m</a></li>
+			<ul class="stops_list">
+				<li><a href="#" id="stop-item"><span class="fontsmith_font onibus_ponto icone verde"></span><span class="name">SQS 110/111 ponto 1</span><span class="distance">100m<span></a></li>
 			</ul>
 		</section>
-		<footer>
+		<footer class="footer-stop">
 			<p>&copy; Mobee | Company 2013</p>
 		</footer>
 	</body>
