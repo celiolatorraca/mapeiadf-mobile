@@ -36,22 +36,31 @@
 		</header>
 		
 		<section class="content1">
-			<button type="button" class="botao">
+			<!-- <button type="button" class="botao">
 				<span class="fontsmith_font chegar icone"></span>
 				<span class="texto">Como chegar?</span>
-			</button>
-			<button type="button" class="botao" id="onibus-aqui">
+			</button> -->
+			<button type="button" class="botao" id="onibus-aqui" style="margin-left: 0.2em;
+width: 96%;">
 				<span class="fontsmith_font linhas icone"></span>
 				<span class="texto">Que onibus passa aqui?</span>
 			</button>
-			<button type="button" class="botao botao-verde" id="marcar-ponto">
+<!-- 			<button type="button" class="botao" id="marcar-ponto">
 				<span class="fontsmith_font addpontos icone"></span>
 				<span class="texto">Marcar ponto de &ocirc;nibus</span>
 			</button>
 
+			<input type="text" name="fname" placeholder="Informe as linhas deste ponto, ex: 0.102, 0.107..."> -->
+
 			<div class="ponto-marcado">
-				<div class="linha">&nbsp;</div>
-				<p>Quantidade de pontos marcados: <span class="quantidade badge badge-warning">0</span></p>
+				<button type="button" class="botao" id="marcar-ponto">
+					<span class="fontsmith_font addpontos icone"></span>
+					<span class="texto">Marcar ponto de &ocirc;nibus</span>
+				</button>
+
+				<input type="text" name="fname" placeholder="&nbsp;&nbsp;Linhas associada? Ex:0.102, 0.107...">
+				<!-- <div class="linha">&nbsp;</div> -->
+				<p>Quantidade de pontos marcados: <span class="quantidade badge">0</span></p>
 
 				<button type="button" class="btn btn-block btn-large sinc-btn" id="sincronizar">
 					<i class="icon-repeat sinc"></i>Mandar pontos marcados.

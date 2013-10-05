@@ -9,6 +9,11 @@ html, body{
 } 
 section {
 }
+input {
+	width: 100%;
+	text-align: center !important;
+	padding: 10px 0px !important;   
+}
 .header{
 	background: #EFECCA;
 	-moz-box-shadow: inset 0 0 100px #A7A468;
@@ -105,17 +110,17 @@ header{
 	font-weight: ;
 
 	font-size: 2.1rem;
-	color:#AF6507;
+	color:#8F7E00;
 
-	background-image: linear-gradient(to bottom,#F7A035, #F7C135);
-	background-image: -webkit-linear-gradient( bottom,#F7A035, #F7C135);
-	background-image: -o-linear-gradient( bottom,#F7A035, #F7C135);
-	background-image: -moz-linear-gradient( bottom,#F7A035, #F7C135);
-	background-image: -ms-linear-gradient( bottom,#F7A035, #F7C135);
-	background-color: #F7A035;
+	background-image: linear-gradient( bottom,#F7D035, #F0F026);
+	background-image: -webkit-linear-gradient( bottom,#F7D035, #F0F026);
+	background-image: -o-linear-gradient( bottom,#F7D035, #F0F026);
+	background-image: -moz-linear-gradient( bottom,#F7D035, #F0F026);
+	background-image: -ms-linear-gradient( bottom,#F7D035, #F0F026);
+	background-color: #F0F026;
 	border: 0px;
-	border-top: 1px solid #FFDD94;
-	border-bottom: 1px solid #C98000;
+	border-top: 1px solid #FFFB94;
+	border-bottom: 1px solid #CAB201;
 	-webkit-border-radius: 0.2em;
 	-moz-border-radius: 0.2em;
 	border-radius: 0.2em;
@@ -133,14 +138,14 @@ header{
 	border-bottom: 1px solid #4E9600;
 }
 .botao:active{
-	background-image: linear-gradient(to bottom,#F7A035,#F7A035);
-	background-image: -webkit-linear-gradient( bottom,#F7A035,#F7A035);
-	background-image: -o-linear-gradient( bottom,#F7A035,#F7A035);
-	background-image: -moz-linear-gradient( bottom,#F7A035,#F7A035);
-	background-image: -ms-linear-gradient( bottom,#F7A035,#F7A035);
-	background-color: #F7A035;
-	border-top: 1px solid #C98000;
-	border-bottom: 1px solid #FFDD94;
+	background-image: linear-gradient(to bottom,#F0F026,#F7D035);
+	background-image: -webkit-linear-gradient( bottom,#F0F026,#F7D035);
+	background-image: -o-linear-gradient( bottom,#F0F026,#F7D035);
+	background-image: -moz-linear-gradient( bottom,#F0F026,#F7D035);
+	background-image: -ms-linear-gradient( bottom,#F0F026,#F7D035);
+	background-color: #F7D035;
+	border-top: 1px solid #CAB201;
+	border-bottom: 1px solid #FFFB94;
 }
 
 .botao-verde:active{
@@ -156,7 +161,7 @@ header{
 .botao .icone{
 	float: left;
 	padding: 0.1rem 0rem;
-	border-right: 1px solid #CC871F;
+	border-right: 1px solid #CAB201;
 	width: 1.5em;
 }
 .botao-verde .icone{
@@ -199,9 +204,9 @@ header{
 .quantidade {
 	font-size: 1.1rem;
 	padding: 6px;
-	box-shadow: 0 0 26px white;
 	margin-left: 6px;
-	line-height: 18px;
+	line-height: 16px;
+	background-color: #F84006;
 }
 .ui-loader{
 	display:none;
