@@ -19,7 +19,7 @@ $(function() {
 		dbSize: 1000000
 	});
 	Mobee.Api = new Mobee.API({
-		baseEndPoint: "http://Mobee.com.br/api",
+		baseEndPoint: "http://www.mapeiadf.com.br/api",
 		syncEndPoint: "/stops/sync",
 		stopsAroundEndPoint: "/stops/stops_around"
 	});
