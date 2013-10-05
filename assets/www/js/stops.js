@@ -8,7 +8,7 @@ $(function() {
 	$("#retornar").click(function(e) {
 		window.location.href = "index.html";
 	});
-	$("#stop-item").click(function(e) {
+	$(".stop").click(function(e) {
 		window.location.href = "stops_lines.html";
 	});
 });
