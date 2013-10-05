@@ -227,21 +227,19 @@ header{
 }
 .stops ul li{
 	border-bottom: 1px solid rgba(44, 109, 104, 0.33);
-}
-.stops ul li a{
 	padding: 8px 10px 8px 10px;
 	background: white;
 	display: block;
 	color: #2C6D68;
 }
-.stops ul li a:hover, .stops ul li a:active{
+.stops ul li:hover{
 	text-decoration: none;
 }
-.stops ul li a span.icone {
+.stops ul li span.icone {
 	font-size: 2em;
 	padding: 0 6px 0 0;
 }
-.stops ul li a span.distance {
+.stops ul li span.distance {
 	float: right;
 	background: rgb(255, 255, 255);
 	height: 18px;
