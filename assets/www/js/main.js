@@ -15,6 +15,11 @@ function onDeviceResumed(){
 	Mobee.Api.status = Mobee.RUNNING;
 }
 
+$.urlParam = function(name){
+    var results = new RegExp('[\\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
+    return results[1] || 0;
+}
+
 $(function() {
 	Mobee.Gps = new Mobee.GPS({
 		options: {
@@ -32,6 +37,7 @@ $(function() {
 	Mobee.Api = new Mobee.API({
 		baseEndPoint: "http://www.mapeiadf.com.br/api",
 		syncEndPoint: "/stops/sync",
-		stopsAroundEndPoint: "/stops/stops_around"
+		stopsAroundEndPoint: "/stops/stops_around",
+		linesFromPointEndPoint: "/lines/from_point"
 	});
 });
