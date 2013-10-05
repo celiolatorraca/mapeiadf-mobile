@@ -7,11 +7,10 @@ $(function() {
 	}, 5000);
 
 	$("#retornar").click(function(e) {
-		window.location.href = "index.html";
+		//window.location.href = "index.html";
+		history.back();
 	});
-	$(".stop").click(function(e) {
-		window.location.href = "stops_lines.html";
-	});
+
 });
 
 function updateStops(data) {
@@ -33,6 +32,9 @@ function updateStops(data) {
 			stopLi.append(stopIcon);
 			stopLi.append(nameSpan);
 			stopLi.append(distanceSpan);
+			stopLi.click(function(e) {
+				window.location.href = "stops_lines.html?stop_id=" + $(this).attr('data-id');
+			});		
 			
 			stopsWrapper.append(stopLi);
 		}

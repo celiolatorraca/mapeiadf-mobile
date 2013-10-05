@@ -104,6 +104,28 @@ Mobee.API.prototype = {
 				console.log("Error! " + jqXHR.responseText);
 			}
 		});
+	},
+	
+	getLinesFromStop: function(stopId, callback) {
+		var self = Mobee.Api;
+		var json = {};
+		json["stop_id"] = stopId;
+		$.ajaxSetup({
+			headers: {"X-Requested-With": "XMLHttpRequest"}
+		});
+		$.ajax({
+			url: self.baseEndPoint + self.linesFromPointEndPoint,
+			type: "POST",
+			dataType: "json",
+			contentType: "application/json",
+			data: JSON.stringify(json),
+			success: function(data) {
+				callback(data);
+			},
+			error: function(jqXHR, errorType, exception) {
+				console.log("Error! " + jqXHR.responseText);
+			}
+		});
 	}
 	
 }

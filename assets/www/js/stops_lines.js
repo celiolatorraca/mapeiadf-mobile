@@ -1,19 +1,16 @@
 $(function() {
-	Mobee.Api.getStopsAround(updateStops);
 	
-	setInterval(function() {
-		Mobee.Api.getStopsAround(updateStops);
-	}, 5000);
-
 	$("#retornar").click(function(e) {
-		window.location.href = "stops.html";
+		//window.location.href = "index.html";
+		history.back();
 	});
+	
 	$("#menu").click(function(e) {
 		window.location.href = "index.html";
 	});
 });
 
-function updateStops(data) {
+function updateLines(data) {
 	var stopsWrapper = $(".stops_list");
 	
 	if (data["success"]) {
