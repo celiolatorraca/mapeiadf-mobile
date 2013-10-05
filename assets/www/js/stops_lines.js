@@ -23,15 +23,18 @@ function updateStops(data) {
 		for (var index in stops) {
 			var stopLi = $("<li></li>", {class: "stop", "data-id": stops[index].id});
 			var stopIcon = $("<span></span>", {class:"fontsmith_font onibus_ponto icone verde"});
-			var nameSpan = $("<span></span>", {class: "name"});
-			var distanceSpan = $("<span></span>", {class: "distance"});
+			var nameSpan = $("<span></span>", {class: "name line_name"});
+			var descriptionSpan = $("<span></span>", {class: "description"});
+			var estimatedTimeSpan = $("<span></span>", {class: "estimated-time"});
 			
 			nameSpan.text(stops[index].name);
 			distanceSpan.text("(" + +stops[index].distance + ")");
 			
+			stopLi.append(stopLi);
 			stopLi.append(stopIcon);
 			stopLi.append(nameSpan);
-			stopLi.append(distanceSpan);
+			stopLi.append(descriptionSpan);
+			stopLi.append(estimatedTimeSpan);
 			
 			stopsWrapper.append(stopLi);
 		}
