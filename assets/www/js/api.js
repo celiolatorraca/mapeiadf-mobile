@@ -23,7 +23,7 @@ Mobee.API.prototype = {
 			self.sendingResults = true;
 			
 			Mobee.Db.getInstance().transaction(function(tx) {
-				tx.executeSql('SELECT * FROM MAPEIA_DF', [], function(tx, results) {
+				tx.executeSql('SELECT * FROM MOBEE', [], function(tx, results) {
 					if (results.rows.length > 0) {
 						var json = {};
 						json["facebook_user_id"] = facebookUserId;
