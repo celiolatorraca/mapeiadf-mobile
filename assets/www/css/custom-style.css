@@ -21,11 +21,15 @@ section {
 .header p {
 	background: #2C6D68;
 	margin: 0;
-	padding: 10px 5px;
+	padding: 5px;
 	color: #fff;
 	box-shadow: 0 1px 4px 0px rgba(0,0,0,0.5);
 	z-index: 1;
 	position: relative;
+	text-align: center;
+}
+.header p span {
+	font-weight: 100;
 }
 .header .retornar {
 	padding: 10px 13px;
@@ -212,7 +216,10 @@ header{
 	box-shadow: inset 0px 13px 10px -9px rgba(255, 255, 255, 0.74);
 }
 .stops {
-	padding-top: 136px;
+	padding-top: 125px;
+}
+.stops.lines {
+	padding-top: 145px;
 }
 .stops ul{
 	list-style: none;
@@ -232,7 +239,7 @@ header{
 	font-size: 2em;
 	padding: 0 6px 0 0;
 }
-.stops ul li span.distance {
+.stops ul li span.distance, .stops ul li span.estimated-time {
 	float: right;
 	background: rgb(255, 255, 255);
 	height: 18px;

@@ -21,14 +21,14 @@
 		<script type="text/javascript" charset="utf-8" src="js/facebook.js"></script>
 		<script type="text/javascript" charset="utf-8" src="js/main.js"></script>
 		
-		<script type="text/javascript" charset="utf-8" src="js/stops.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/stops_lines.js"></script>
 	</head>
 
 	<body>
 		<div id="fb-root"></div>
 		<section class="header">
-			<div class="retornar"><i class="icon-chevron-left icon-white"></i></div>
-			<!-- <div class="menu"><i class="icon-list icon-white"></i></div> -->
+			<div class="retornar" id="retornar"><i class="icon-chevron-left icon-white"></i></div>
+			<div class="menu" id="menu"><i class="icon-list icon-white"></i></div>
 			
 			<div class="overlay hide">
 				<img src="img/ajax-loader.gif" alt="loading" class="loading" />
@@ -37,26 +37,11 @@
 			<header>
 				<div class="logo"></div>
 			</header>
-			<p>Escolha um ponto de &ocirc;nibus para ver as linhas.</p>
+			<p>Linhas de &ocirc;nibus que passam nesse ponto:<br><span style="font-weight: 100;"> SQS 110/111 ponto 1</span></p>
 		</section>
-		<section class="content1 stops">
+		<section class="content1 stops lines">
 			<ul>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone verde"></span> SQS 110/111 ponto 1 - 100m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone amarelo"></span> SQS 110/111 ponto 2 - 110m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone vermelho"></span> SQS 110/111 ponto 3 - 120m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone "></span> SQS 210/211 ponto 1 - 100m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone verde"></span> SQS 210/211 ponto 2 - 110m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone amarelo"></span> SQS 210/211 ponto 3 - 120m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone vermelho"></span> SQS 110/111 ponto 3 - 120m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone verde"></span> 210/211 ponto 1 - 100m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone amarelo"></span> SQS 210/211 ponto 2 - 110m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone vermelho"></span> SQS 210/211 ponto 3 - 120m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone vermelho"></span> SQS 210/211 ponto 3 - 120m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone vermelho"></span> SQS 210/211 ponto 3 - 120m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone vermelho"></span> SQS 210/211 ponto 3 - 120m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone vermelho"></span> SQS 210/211 ponto 3 - 120m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone vermelho"></span> SQS 210/211 ponto 3 - 120m</a></li>
-				<li><a href="#"><span class="fontsmith_font onibus_ponto icone vermelho"></span> SQS 210/211 ponto 3 - 120m</a></li>
+				<li class="stop"><span class="fontsmith_font onibus icone"></span><span class="name">0.107</span><span class="description"> - L2 - W3 Norte<span><span class="estimated-time">T 06:30<span></li>
 			</ul>
 		</section>
 		<footer class="footer-stop">
