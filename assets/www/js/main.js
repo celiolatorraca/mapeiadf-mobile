@@ -1,7 +1,18 @@
 document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("pause", onDevicePaused, false);
+document.addEventListener("resume", onDeviceResumed, false);
+
 function onDeviceReady() {
 	FB.init({ appId: "119817438197601", nativeInterface: CDV.FB, useCachedDialogs: false });
 	Mobee.Fb = new Mobee.Facebook();
+}
+
+function onDevicePaused(){
+	Mobee.Api.status = Mobee.PAUSED;
+}
+
+function onDeviceResumed(){
+	Mobee.Api.status = Mobee.RUNNING;
 }
 
 $(function() {
