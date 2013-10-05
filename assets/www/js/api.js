@@ -1,3 +1,6 @@
+Mobee.RUNNING = 0;
+Mobee.PAUSED = 1;
+
 Mobee.API = function(params) {
 	this.params = params;
 	this.baseEndPoint = this.params.baseEndPoint;
@@ -9,6 +12,7 @@ Mobee.API = function(params) {
 
 Mobee.API.prototype = {
 	
+	status: Mobee.RUNNING,
 	sendingResults: false,
 	sendingResultIds: [],
 	
