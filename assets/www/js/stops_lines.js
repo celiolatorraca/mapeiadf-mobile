@@ -1,4 +1,7 @@
 $(function() {
+
+	$('#stop-name').text(decodeURI($.urlParam('stop_name')));
+	Mobee.Api.getLinesFromStop($.urlParam('stop_id'), updateLines);
 	
 	$("#retornar").click(function(e) {
 		//window.location.href = "index.html";
@@ -11,29 +14,28 @@ $(function() {
 });
 
 function updateLines(data) {
-	var stopsWrapper = $(".stops_list");
+	var linesWrapper = $(".lines_list");
 	
 	if (data["success"]) {
-		stopsWrapper.empty();
+		linesWrapper.empty();
 		
-		var stops = data["stops"];
-		for (var index in stops) {
-			var stopLi = $("<li></li>", {class: "stop", "data-id": stops[index].id});
-			var stopIcon = $("<span></span>", {class:"fontsmith_font onibus_ponto icone verde"});
+		var lines = data["lines"];
+		for (var index in lines) {
+			var lineLi = $("<li></li>", {class: "stop", "data-id": lines[index].id});
+			var lineIcon = $("<span></span>", {class:"fontsmith_font onibus icone verde"});
 			var nameSpan = $("<span></span>", {class: "name line_name"});
 			var descriptionSpan = $("<span></span>", {class: "description"});
 			var estimatedTimeSpan = $("<span></span>", {class: "estimated-time"});
 			
-			nameSpan.text(stops[index].name);
-			distanceSpan.text("(" + +stops[index].distance + ")");
+			nameSpan.text(lines[index].name);
+			descriptionSpan.text(" - " + lines[index].description);
 			
-			stopLi.append(stopLi);
-			stopLi.append(stopIcon);
-			stopLi.append(nameSpan);
-			stopLi.append(descriptionSpan);
-			stopLi.append(estimatedTimeSpan);
+			lineLi.append(lineIcon);
+			lineLi.append(nameSpan);
+			lineLi.append(descriptionSpan);
+			lineLi.append(estimatedTimeSpan);
 			
-			stopsWrapper.append(stopLi);
+			linesWrapper.append(lineLi);
 		}
 	}
 }

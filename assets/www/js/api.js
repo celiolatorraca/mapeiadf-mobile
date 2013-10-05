@@ -6,6 +6,7 @@ Mobee.API = function(params) {
 	this.baseEndPoint = this.params.baseEndPoint;
 	this.syncEndPoint = this.params.syncEndPoint;
 	this.stopsAroundEndPoint = this.params.stopsAroundEndPoint;
+	this.linesFromPointEndPoint = this.params.linesFromPointEndPoint;
 	
 	this._init();
 }

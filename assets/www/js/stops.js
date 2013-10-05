@@ -21,7 +21,7 @@ function updateStops(data) {
 		
 		var stops = data["stops"];
 		for (var index in stops) {
-			var stopLi = $("<li></li>", {class: "stop", "data-id": stops[index].id});
+			var stopLi = $("<li></li>", {class: "stop", "data-id": stops[index].id, "data-name": stops[index].name});
 			var stopIcon = $("<span></span>", {class:"fontsmith_font onibus_ponto icone " + getIconColorByDistance(stops[index].distance)});
 			var nameSpan = $("<span></span>", {class: "name"});
 			var distanceSpan = $("<span></span>", {class: "distance"});
@@ -33,7 +33,7 @@ function updateStops(data) {
 			stopLi.append(nameSpan);
 			stopLi.append(distanceSpan);
 			stopLi.click(function(e) {
-				window.location.href = "stops_lines.html?stop_id=" + $(this).attr('data-id');
+				window.location.href = "stops_lines.html?stop_id=" + $(this).attr('data-id') + "&stop_name=" + encodeURI($(this).attr('data-name'));
 			});		
 			
 			stopsWrapper.append(stopLi);
