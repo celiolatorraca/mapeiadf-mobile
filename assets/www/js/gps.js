@@ -17,12 +17,15 @@ Mobee.GPS.prototype = {
 	},
 
 	verifyGPS: function() {
-		gpsDetect = cordova.require('cordova/plugin/gpsDetectionPlugin');
-		gpsDetect.checkGPS(function(on) {
-			if (!on) {
-				alert("É preciso ligar seu GPS :)");
-			}
-		});
+		
+		if(true || device.platform == 'Android'){
+			gpsDetect = cordova.require('cordova/plugin/gpsDetectionPlugin');
+			gpsDetect.checkGPS(function(on) {
+				if (!on) {
+					alert("É preciso ligar seu GPS :)");
+				}
+			});
+		}
 	},
 	
 	showResults: function() {

@@ -25,10 +25,13 @@ function updateLines(data) {
 			var lineIcon = $("<span></span>", {class:"fontsmith_font onibus icone verde"});
 			var nameSpan = $("<span></span>", {class: "name line_name"});
 			var descriptionSpan = $("<span></span>", {class: "description"});
+			var fareSpan = $("<span></span>", {class: "fare"});
 			var estimatedTimeSpan = $("<span></span>", {class: "estimated-time"});
 			
 			nameSpan.text(lines[index].name);
 			descriptionSpan.text(" - " + lines[index].description);
+			fareSpan.text(lines[index].fare);
+			estimatedTimeSpan.text('T' + lines[index].estimated_time);
 			
 			lineLi.append(lineIcon);
 			lineLi.append(nameSpan);

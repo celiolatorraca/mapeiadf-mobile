@@ -27,7 +27,7 @@ function updateStops(data) {
 			var distanceSpan = $("<span></span>", {class: "distance"});
 			
 			nameSpan.text(stops[index].name);
-			distanceSpan.text("(" + +stops[index].distance + ")");
+			distanceSpan.text(stops[index].distance + "m");
 			
 			stopLi.append(stopIcon);
 			stopLi.append(nameSpan);
